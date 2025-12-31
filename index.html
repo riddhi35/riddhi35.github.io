@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddhi's Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .profile-info h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+        
+        .nav-btn:hover {
+            background: white;
+            color: #2575fc;
+            transform: translateY(-3px);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 15px;
+            background: #f8f9fa;
+            border-left: 5px solid #2575fc;
+        }
+        
+        h2 {
+            color: #2575fc;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .post {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #f1f3f5;
+            color: #666;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-info h1 {
+                font-size: 2em;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 80%;
+                text-align: center;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <!-- REPLACE THIS IMAGE WITH YOUR PHOTO -->
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80" 
+                     alt="Riddhi's Photo" class="profile-img" id="profileImage">
+                <div class="profile-info">
+                    <h1 id="yourName">Riddhi's Personal Space</h1>
+                    <p class="tagline" id="yourTagline">Thoughts • Writing • Daily Vlogs • Political Views • Journal</p>
+                    <p style="margin-top: 15px; font-size: 1.1em;">Welcome to my personal website where I share my daily thoughts, vlogs, and writings</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#thoughts" class="nav-btn">💭 Thoughts & Writing</a>
+                <a href="#vlogs" class="nav-btn">🎥 Daily Vlogs</a>
+                <a href="#politics" class="nav-btn">🏛️ Political Views</a>
+                <a href="#journal" class="nav-btn">📖 Personal Journal</a>
+                <a href="#about" class="nav-btn">👤 About Me</a>
+            </div>
+        </header>
+        
+        <div class="content">
+            <section id="thoughts" class="section">
+                <h2>💭 My Thoughts & Writings</h2>
+                <div class="post">
+                    <div class="date">Today</div>
+                    <h3>Welcome to My Website!</h3>
+                    <p>This is where I'll be sharing my daily thoughts, reflections, and creative writings. Feel free to explore and join me on this journey.</p>
+                </div>
+                <div class="post">
+                    <div class="date">Coming Soon</div>
+                    <h3>More Thoughts to Share</h3>
+                    <p>I'll be posting regularly about various topics that interest me and shape my perspective.</p>
+                </div>
+            </section>
+            
+            <section id="vlogs" class="section">
+                <h2>🎥 Daily Vlogs</h2>
+                <div class="post">
+                    <div class="date">Coming Soon</div>
+                    <h3>My Daily Life in Videos</h3>
+                    <p>Vlog content will be uploaded here regularly. Subscribe to stay updated!</p>
+                    <p style="margin-top: 10px; color: #2575fc; font-weight: bold;">Video platform links will be added soon!</p>
+                </div>
+            </section>
+            
+            <section id="politics" class="section">
+                <h2>🏛️ Political Views & Commentary</h2>
+                <div class="post">
+                    <div class="date">Today</div>
+                    <h3>My Political Perspective</h3>
+                    <p>This section is dedicated to sharing my political views, analysis, and commentary on current events.</p>
+                    <p>I believe in open, respectful dialogue about important issues facing our society.</p>
+                </div>
+            </section>
+            
+            <section id="journal" class="section">
+                <h2>📖 Personal Journal</h2>
+                <div class="post">
+                    <div class="date">Today</div>
+                    <h3>Journal Entry #1</h3>
+                    <p>Starting this journal to document my personal growth, reflections, and daily experiences.</p>
+                    <p style="font-style: italic; margin-top: 10px;">"The journey of a thousand miles begins with a single step."</p>
+                </div>
+            </section>
+            
+            <section id="about" class="section">
+                <h2>👤 About Me</h2>
+                <div class="post">
+                    <h3>Hello! I'm Riddhi</h3>
+                    <p>Welcome to my personal corner of the internet! This website is my digital space where I share:</p>
+                    <ul style="margin: 15px 0 15px 30px;">
+                        <li>Daily thoughts and reflections</li>
+                        <li>Video blogs about my life</li>
+                        <li>Political commentary and views</li>
+                        <li>Personal journal entries</li>
+                        <li>Creative writing pieces</li>
+                    </ul>
+                    <p>I believe in authentic self-expression and creating meaningful content. Feel free to explore and connect with me through my writings.</p>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 10px;">
+                        <h4>🌐 My Website Details:</h4>
+                        <p><strong>URL:</strong> https://riddhighorui.github.io</p>
+                        <p><strong>Platform:</strong> GitHub Pages (Free & Custom)</p>
+                        <p><strong>Updated:</strong> Daily/Weekly</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>© 2024 Riddhi's Personal Website. All rights reserved.</p>
+            <p>Hosted on GitHub Pages • Updated regularly</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Visit: <strong>riddhighorui.github.io</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        // Instructions to add your photo:
+        // 1. Upload your photo to imgur.com (no account needed)
+        // 2. Right-click the image → Copy image address
+        // 3. Replace the placeholder image URL below
+        
+        // Example: document.getElementById('profileImage').src = 'YOUR_PHOTO_URL_HERE';
+        
+        // Customize your details:
+        document.getElementById('yourName').textContent = 'Riddhi\'s Personal Space';
+        document.getElementById('yourTagline').textContent = 'Thoughts • Writing • Daily Vlogs • Political Views • Journal';
+        
+        // Current year in footer
+        document.querySelector('footer p').innerHTML = '© ' + new Date().getFullYear() + ' Riddhi\'s Personal Website. All rights reserved.';
+    </script>
+</body>
+</html>
