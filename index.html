@@ -160,6 +160,33 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
+        /* Latest Post in Hero */
+        .latest-post {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .latest-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .latest-post h5 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .latest-post h5 i {
+            font-size: 1.2em;
+        }
+        
         /* About Section */
         .about-img {
             border-radius: 20px;
@@ -248,11 +275,12 @@
         .portfolio-img {
             position: relative;
             overflow: hidden;
+            height: 250px;
         }
         
         .portfolio-img img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
@@ -285,6 +313,38 @@
             padding: 20px;
         }
         
+        /* Featured Blog Section */
+        .featured-blog-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .featured-blog-section .section-title h2,
+        .featured-blog-section .section-title p {
+            color: white;
+        }
+        
+        .blog-featured-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-featured-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .blog-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
         /* Blog Section */
         .blog-item {
             border-radius: 15px;
@@ -292,6 +352,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             margin-bottom: 30px;
+            background: white;
         }
         
         .blog-item:hover {
@@ -454,6 +515,10 @@
                 padding: 150px 0 80px;
                 text-align: center;
             }
+            
+            .portfolio-img {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -498,6 +563,16 @@
                         <div class="mt-4">
                             <a href="#portfolio" class="btn btn-primary me-3">View My Work</a>
                             <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
+                        </div>
+                        
+                        <!-- Latest Post Section -->
+                        <div class="latest-post">
+                            <h5><i class="fas fa-feather-alt"></i> Latest Blog Post</h5>
+                            <h4>First Day of 2026: Cubbon Park Reflections</h4>
+                            <p class="text-muted mb-3">A quiet morning walk in Bangalore with friends, reflecting on memories and new beginnings. Published on January 1, 2026.</p>
+                            <a href="blogs/first-january-2026.html" class="btn btn-primary btn-sm">
+                                Read Full Post <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -594,14 +669,15 @@
             </div>
             
             <div class="row portfolio-grid">
-                <!-- Writing Portfolio Item -->
+                <!-- Featured Blog in Portfolio -->
                 <div class="col-lg-4 col-md-6 portfolio-item writing">
                     <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Writing Portfolio">
+                        <img src="https://images.unsplash.com/photo-1580229085925-603a605c431d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="January 1st Blog">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
-                                <h4>Thoughtful Essays</h4>
-                                <p>Collection of personal essays and reflections</p>
+                                <h4>First Day of 2026</h4>
+                                <p>Personal reflections from Cubbon Park</p>
+                                <a href="blogs/first-january-2026.html" class="btn btn-sm btn-light mt-2">Read Blog</a>
                             </div>
                         </div>
                     </div>
@@ -623,7 +699,7 @@
                 <!-- Vlogs Portfolio Item -->
                 <div class="col-lg-4 col-md-6 portfolio-item vlogs">
                     <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vlogs Portfolio">
+                        <img src="https://images.unsplash.com/phone-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vlogs Portfolio">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h4>Daily Life Vlogs</h4>
@@ -675,12 +751,59 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="section-padding">
+    <!-- Featured Blog Section -->
+    <section id="blog" class="section-padding featured-blog-section">
         <div class="container">
             <div class="section-title">
-                <h2>Latest Thoughts</h2>
-                <p>Recent writings, reflections, and insights from my personal journal</p>
+                <h2>Featured Blog Post</h2>
+                <p>My latest reflection on life, memories, and new beginnings</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="blog-featured-card bg-white">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <img src="https://images.unsplash.com/photo-1580229085925-603a605c431d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                     class="img-fluid h-100" alt="Cubbon Park Reflection" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-4 p-md-5 d-flex flex-column h-100">
+                                    <span class="blog-badge mb-3">Latest Post</span>
+                                    <h3 class="mb-4" style="color: var(--dark-color);">First Day of 2026: Cubbon Park Reflections</h3>
+                                    <div class="mb-4" style="color: var(--gray-color);">
+                                        <span class="me-3"><i class="far fa-calendar me-1"></i> January 1, 2026</span>
+                                        <span><i class="far fa-clock me-1"></i> 3 min read</span>
+                                    </div>
+                                    <p style="color: var(--gray-color); line-height: 1.8; flex-grow: 1;">
+                                        "Almost eleven months since I left home, and today Bangalore felt a little less unfamiliar. 
+                                        The city woke up slowly, like someone stretching after a long sleep. We were four—Nilabha, 
+                                        Jyotirmoy, Apurba, and me—walking towards Cubbon Park, carrying nothing heavy except memories 
+                                        that don't ask permission before sitting beside you..."
+                                    </p>
+                                    <div class="mt-4">
+                                        <a href="blogs/first-january-2026.html" class="btn btn-primary me-3">
+                                            Read Full Post <i class="fas fa-arrow-right ms-2"></i>
+                                        </a>
+                                        <a href="blog.html" class="btn btn-outline-primary">
+                                            View All Posts
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Blog Posts -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recent Thoughts</h2>
+                <p>More writings and reflections from my journey</p>
             </div>
             
             <div class="row">
@@ -838,11 +961,11 @@
                     <div class="footer-links">
                         <h5>Categories</h5>
                         <ul>
-                            <li><a href="#">Thoughts & Writing</a></li>
-                            <li><a href="#">Photography</a></li>
-                            <li><a href="#">Daily Vlogs</a></li>
-                            <li><a href="#">Political Views</a></li>
-                            <li><a href="#">Personal Journal</a></li>
+                            <li><a href="blog.html">Thoughts & Writing</a></li>
+                            <li><a href="#portfolio" data-filter=".photography">Photography</a></li>
+                            <li><a href="#portfolio" data-filter=".vlogs">Daily Vlogs</a></li>
+                            <li><a href="#portfolio" data-filter=".politics">Political Views</a></li>
+                            <li><a href="blog.html">Personal Journal</a></li>
                         </ul>
                     </div>
                 </div>
@@ -852,6 +975,9 @@
                         <h5>Visit</h5>
                         <p>riddhi35.github.io</p>
                         <p>Updated regularly with new content</p>
+                        <p style="font-size: 0.9rem; color: #b0b0b0; margin-top: 10px;">
+                            Latest: <a href="blogs/first-january-2026.html" style="color: #b0b0b0;">First Day of 2026</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -935,6 +1061,19 @@
         
         // Update year in footer
         document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Riddhi Ghorui. All Rights Reserved. | Designed with Bootstrap`;
+        
+        // Filter links in footer
+        document.querySelectorAll('.footer-links a[data-filter]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const filter = this.getAttribute('data-filter');
+                document.querySelector(`.filter-btn[data-filter="${filter}"]`).click();
+                window.scrollTo({
+                    top: document.querySelector('#portfolio').offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
