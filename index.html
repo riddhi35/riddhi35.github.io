@@ -3,692 +3,938 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riddhi's Personal Space | Thoughts • Vlogs • Photography</title>
-    <meta name="description" content="Riddhi's personal website featuring thoughts, daily vlogs, political views, photography gallery, and personal journal.">
-    <meta name="keywords" content="personal blog, daily vlogs, photography, political commentary, journal">
-    <meta name="author" content="Riddhi">
-    <meta property="og:image" content="https://i.postimg.cc/BQpCS9Hz/RG-photo.jpg">
+    <title>Riddhi Ghorui | Personal Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #4a44c6;
+            --dark-color: #2a2a2a;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Arial', sans-serif;
-        }
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
-            --radius: 15px;
-            --transition: all 0.3s ease;
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            padding-top: 70px;
+            color: var(--dark-color);
+            overflow-x: hidden;
         }
         
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .nav-btn {
-            background: transparent;
-            color: var(--dark);
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
+        h1, h2, h3, h4, h5, h6 {
             font-weight: 600;
-            transition: var(--transition);
-            border: 2px solid transparent;
         }
         
-        .nav-btn:hover {
-            background: var(--secondary);
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
             color: white;
             transform: translateY(-2px);
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .section-title p {
+            color: var(--gray-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            padding: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: white;
+            background-color: var(--primary-color);
         }
         
         /* Hero Section */
-        .hero {
-            background: white;
-            border-radius: var(--radius);
-            padding: 60px 40px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow);
+        .hero-section {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+        }
+        
+        .hero-image {
+            position: relative;
             text-align: center;
         }
         
-        .profile-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
-        .profile-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--secondary);
-            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.3);
-            transition: var(--transition);
+        /* About Section */
+        .about-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .profile-img:hover {
+        .about-img img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
             transform: scale(1.05);
-            border-color: var(--accent);
         }
         
-        .profile-info h1 {
-            font-size: 2.8em;
-            background: linear-gradient(45deg, #2c3e50, #3498db);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-        }
-        
-        .tagline {
-            font-size: 1.3em;
-            color: #666;
+        .about-content h3 {
+            font-size: 2rem;
             margin-bottom: 20px;
         }
         
-        /* Sections */
-        .section {
-            background: white;
-            border-radius: var(--radius);
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow);
+        .about-content p {
+            color: var(--gray-color);
+            margin-bottom: 20px;
         }
         
-        .section-header {
+        .skill-item {
+            margin-bottom: 25px;
+        }
+        
+        .skill-name {
             display: flex;
-            align-items: center;
-            gap: 15px;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-per {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-filter {
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 8px 20px;
+            margin: 0 5px;
+            color: var(--gray-color);
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            color: white;
+            background-color: var(--primary-color);
+        }
+        
+        .portfolio-item {
             margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--secondary);
-        }
-        
-        .section-icon {
-            font-size: 2em;
-        }
-        
-        h2 {
-            color: var(--primary);
-            font-size: 2em;
-        }
-        
-        /* Photography Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .photo-card {
-            position: relative;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: var(--transition);
-            cursor: pointer;
-            height: 300px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
         
-        .photo-card:hover {
+        .portfolio-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         
-        .photo-card img {
+        .portfolio-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-img img {
             width: 100%;
-            height: 100%;
+            height: 250px;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
         
-        .photo-card:hover img {
+        .portfolio-item:hover .portfolio-img img {
             transform: scale(1.1);
         }
         
-        .photo-info {
+        .portfolio-overlay {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-        
-        .photo-card:hover .photo-info {
-            transform: translateY(0);
-        }
-        
-        /* Content Cards */
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .card {
-            background: var(--light);
-            border-radius: var(--radius);
-            padding: 25px;
-            border-left: 5px solid var(--secondary);
-            transition: var(--transition);
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .date {
-            color: #7f8c8d;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        
-        .read-more {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 30px auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        input, textarea, select {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-        
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-        
-        .btn {
-            background: linear-gradient(45deg, var(--secondary), #2980b9);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px 0;
-            margin-top: 60px;
-            text-align: center;
-            border-top: 1px solid #eee;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: var(--light);
+            height: 100%;
+            background: rgba(108, 99, 255, 0.9);
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            color: var(--dark);
-            transition: var(--transition);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-info {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        /* Blog Section */
+        .blog-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .blog-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-item:hover .blog-img img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .blog-meta span {
+            margin-right: 15px;
+        }
+        
+        .blog-content h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .contact-info-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .form-control {
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-links h5 {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #b0b0b0;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
         }
         
         .social-icon:hover {
-            background: var(--secondary);
-            color: white;
+            background-color: var(--primary-color);
             transform: translateY(-3px);
         }
         
-        /* Back to Top */
-        #backToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            font-size: 20px;
-            z-index: 999;
-        }
-        
-        /* Dark Mode */
-        .dark-mode {
-            background: #1a1a2e;
-            color: #fff;
-        }
-        
-        .dark-mode .hero,
-        .dark-mode .section {
-            background: #16213e;
-            color: #fff;
-        }
-        
-        .dark-mode .card {
-            background: #0f3460;
-        }
-        
-        .dark-mode footer {
-            background: #16213e;
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #b0b0b0;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 150px 0 80px;
                 text-align: center;
             }
-            
-            .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">RIDDHI'S SPACE</div>
-            <nav class="nav-menu">
-                <a href="#home" class="nav-btn">🏠 Home</a>
-                <a href="#thoughts" class="nav-btn">💭 Thoughts</a>
-                <a href="#photography" class="nav-btn">📸 Photography</a>
-                <a href="#vlogs" class="nav-btn">🎥 Vlogs</a>
-                <a href="#politics" class="nav-btn">🏛️ Politics</a>
-                <a href="#journal" class="nav-btn">📖 Journal</a>
-                <a href="#contact" class="nav-btn">📞 Contact</a>
-            </nav>
-            <button id="themeToggle" class="btn" style="padding: 10px 20px;">🌙</button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">RIDDHI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        <!-- Hero Section -->
-        <section id="home" class="hero fade-in">
-            <div class="profile-section">
-                <img src="https://i.postimg.cc/BQpCS9Hz/RG-photo.jpg" 
-                     alt="Riddhi" class="profile-img">
-                <div class="profile-info">
-                    <h1>RIDDHI GHORUI</h1>
-                    <p class="tagline">Thoughts • Photography • Vlogs • Politics • Journal</p>
-                    <p style="max-width: 600px; margin: 0 auto; font-size: 1.1em;">
-                        Welcome to my personal space where I share my journey through thoughts, 
-                        high-quality photography, daily vlogs, political perspectives, and personal reflections.
-                    </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>Hi, I'm <span style="color: var(--primary-color);">Riddhi Ghorui</span></h1>
+                        <p>A creative thinker, writer, photographer, and content creator passionate about sharing perspectives through multiple mediums.</p>
+                        <div class="mt-4">
+                            <a href="#portfolio" class="btn btn-primary me-3">View My Work</a>
+                            <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://i.postimg.cc/BQpCS9Hz/RG-photo.jpg" alt="Riddhi Ghorui">
+                    </div>
                 </div>
             </div>
-            
-            <div style="margin-top: 40px;">
-                <a href="#photography" class="btn" style="margin: 0 10px;">View My Photography</a>
-                <a href="#contact" class="btn" style="background: transparent; color: var(--secondary); border: 2px solid var(--secondary);">Get In Touch</a>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Thoughts Section -->
-        <section id="thoughts" class="section fade-in">
-            <div class="section-header">
-                <span class="section-icon">💭</span>
-                <h2>Thoughts & Writings</h2>
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Get to know more about my journey, skills, and what drives my creative process</p>
             </div>
             
-            <div class="content-grid">
-                <div class="card">
-                    <div class="date">Today</div>
-                    <h3>Welcome to My Digital Space</h3>
-                    <p>This is where I'll be sharing my daily thoughts, reflections, and creative writings...</p>
-                    <a href="#" class="read-more">Read Full Post →</a>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="About Me">
+                    </div>
                 </div>
-                
-                <div class="card">
-                    <div class="date">Coming Soon</div>
-                    <h3>The Power of Expression</h3>
-                    <p>Exploring how writing shapes our thoughts and perspectives...</p>
-                    <a href="#" class="read-more">Read Full Post →</a>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h3>Creative Mind & Passionate Soul</h3>
+                        <p>I'm a multi-faceted creator who expresses through writing, photography, vlogging, and thoughtful commentary. My work reflects my journey of self-discovery and my perspective on the world around me.</p>
+                        <p>I believe in authentic storytelling and creating content that resonates, challenges, and inspires.</p>
+                        
+                        <div class="skills mt-4">
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Writing & Content Creation</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-per" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Photography</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-per" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Video Production</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-per" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Political Analysis</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-per" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Photography Gallery -->
-        <section id="photography" class="section fade-in">
-            <div class="section-header">
-                <span class="section-icon">📸</span>
-                <h2>My Photography Gallery</h2>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
+                <p>A collection of my work across different creative domains</p>
             </div>
             
-            <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em;">
-                High-quality photos captured through my lens. Each image tells a unique story.
-            </p>
+            <div class="portfolio-filter text-center">
+                <button class="filter-btn active" data-filter="*">All</button>
+                <button class="filter-btn" data-filter=".writing">Writing</button>
+                <button class="filter-btn" data-filter=".photography">Photography</button>
+                <button class="filter-btn" data-filter=".vlogs">Vlogs</button>
+                <button class="filter-btn" data-filter=".politics">Politics</button>
+            </div>
             
-            <div class="gallery">
-                <!-- Add your photos here -->
-                <div class="photo-card">
-                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nature Photo">
-                    <div class="photo-info">
-                        <h3>Mountain Sunrise</h3>
-                        <p>Captured during morning trek</p>
+            <div class="row portfolio-grid">
+                <!-- Writing Portfolio Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item writing">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Writing Portfolio">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Thoughtful Essays</h4>
+                                <p>Collection of personal essays and reflections</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="photo-card">
-                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="City Life">
-                    <div class="photo-info">
-                        <h3>Urban Lights</h3>
-                        <p>Cityscape at dusk</p>
+                <!-- Photography Portfolio Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item photography">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photography Portfolio">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Nature Photography</h4>
+                                <p>Capturing beauty in natural landscapes</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="photo-card">
-                    <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Portrait">
-                    <div class="photo-info">
-                        <h3>Portrait Series</h3>
-                        <p>Emotional expressions</p>
+                <!-- Vlogs Portfolio Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item vlogs">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vlogs Portfolio">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Daily Life Vlogs</h4>
+                                <p>Documenting everyday moments and experiences</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Add more photo cards as needed -->
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn" onclick="addMorePhotos()">📁 Upload More Photos</button>
-            </div>
-        </section>
-
-        <!-- Vlogs Section -->
-        <section id="vlogs" class="section fade-in">
-            <div class="section-header">
-                <span class="section-icon">🎥</span>
-                <h2>Daily Vlogs</h2>
-            </div>
-            
-            <div class="content-grid">
-                <div class="card">
-                    <div class="date">Coming Soon</div>
-                    <h3>My Daily Routine</h3>
-                    <p>A day in my life through the lens...</p>
-                    <a href="#" class="read-more">Watch Vlog →</a>
+                <!-- Politics Portfolio Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item politics">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Politics Portfolio">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Political Commentary</h4>
+                                <p>Analysis and perspectives on current affairs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Writing Portfolio Item 2 -->
+                <div class="col-lg-4 col-md-6 portfolio-item writing">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Writing Portfolio 2">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Creative Writing</h4>
+                                <p>Short stories and fictional narratives</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Photography Portfolio Item 2 -->
+                <div class="col-lg-4 col-md-6 portfolio-item photography">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photography Portfolio 2">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Portrait Photography</h4>
+                                <p>Capturing human emotions and expressions</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Political Views -->
-        <section id="politics" class="section fade-in">
-            <div class="section-header">
-                <span class="section-icon">🏛️</span>
-                <h2>Political Views & Commentary</h2>
+    <!-- Blog Section -->
+    <section id="blog" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Thoughts</h2>
+                <p>Recent writings, reflections, and insights from my personal journal</p>
             </div>
             
-            <div class="card">
-                <div class="date">Today</div>
-                <h3>Current Perspectives</h3>
-                <p>Sharing my views on contemporary political scenarios...</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 1">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 15, 2024</span>
+                                <span><i class="far fa-folder"></i> Thoughts</span>
+                            </div>
+                            <h4>The Art of Mindful Living</h4>
+                            <p>Exploring how mindfulness transforms our daily experiences and creative output.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 2">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 10, 2024</span>
+                                <span><i class="far fa-folder"></i> Politics</span>
+                            </div>
+                            <h4>Modern Political Discourse</h4>
+                            <p>Analyzing the evolution of political conversations in the digital age.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1520869562399-e772f042d192?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 3">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 5, 2024</span>
+                                <span><i class="far fa-folder"></i> Photography</span>
+                            </div>
+                            <h4>Finding Stories in Frames</h4>
+                            <p>How photography became my medium for storytelling and emotional expression.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Personal Journal -->
-        <section id="journal" class="section fade-in">
-            <div class="section-header">
-                <span class="section-icon">📖</span>
-                <h2>Personal Journal</h2>
-            </div>
-            
-            <div class="card">
-                <div class="date">Today</div>
-                <h3>Journal Entry #1</h3>
-                <p>Starting this journey of self-reflection...</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section fade-in">
-            <div class="section-header">
-                <span class="section-icon">📞</span>
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding contact-section">
+        <div class="container">
+            <div class="section-title">
                 <h2>Get In Touch</h2>
+                <p>Feel free to reach out for collaborations, discussions, or just to say hello</p>
             </div>
             
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Location</h5>
+                        <p>Based in India</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p>contact@riddhighorui.com</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <select name="subject" required>
-                            <option value="">Select Subject</option>
-                            <option value="photography">Photography</option>
-                            <option value="collaboration">Collaboration</option>
-                            <option value="feedback">Feedback</option>
-                            <option value="other">Other</option>
-                        </select>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Phone</h5>
+                        <p>Available upon request</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                </div>
             </div>
-        </section>
-    </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="col-12 mt-3 text-center">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="social-links">
-                <a href="#" class="social-icon">📷</a>
-                <a href="#" class="social-icon">🎬</a>
-                <a href="#" class="social-icon">🐦</a>
-                <a href="https://github.com/riddhi35" class="social-icon" target="_blank">💻</a>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-links">
+                        <h5>Riddhi Ghorui</h5>
+                        <p>A creative portfolio showcasing thoughts, photography, vlogs, and political commentary.</p>
+                        <div class="social-icons mt-4">
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="https://github.com/riddhi35" class="social-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Categories</h5>
+                        <ul>
+                            <li><a href="#">Thoughts & Writing</a></li>
+                            <li><a href="#">Photography</a></li>
+                            <li><a href="#">Daily Vlogs</a></li>
+                            <li><a href="#">Political Views</a></li>
+                            <li><a href="#">Personal Journal</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Visit</h5>
+                        <p>riddhi35.github.io</p>
+                        <p>Updated regularly with new content</p>
+                    </div>
+                </div>
             </div>
             
-            <p>© <span id="currentYear"></span> Riddhi Ghorui. All rights reserved.</p>
-            <p style="margin-top: 10px; color: #666;">Website: <strong>riddhi35.github.io</strong></p>
-            <p style="margin-top: 5px; font-size: 0.9em;">Powered by GitHub Pages</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Riddhi Ghorui. All Rights Reserved. | Designed with Bootstrap</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop">↑</button>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-        // Current Year in Footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Portfolio Filter
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
         
-        // Smooth Scrolling
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '20px 0';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
+                if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 70,
                         behavior: 'smooth'
                     });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
                 }
             });
         });
         
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Dark/Light Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        });
-        
-        // Contact Form Submission
+        // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
+            alert('Thank you for your message! I will get back to you soon.');
             this.reset();
         });
         
-        // Photo Upload Function
-        function addMorePhotos() {
-            alert('To add more photos:\n\n1. Upload photos to imgur.com\n2. Copy image URLs\n3. Add new photo-card HTML with your image URLs\n\nExample HTML structure:\n\n<div class="photo-card">\n  <img src="YOUR_PHOTO_URL" alt="Description">\n  <div class="photo-info">\n    <h3>Photo Title</h3>\n    <p>Description</p>\n  </div>\n</div>');
-        }
-        
-        // Visitor Counter
-        let visitCount = localStorage.getItem('visitCount') || 0;
-        visitCount++;
-        localStorage.setItem('visitCount', visitCount);
-        
-        // Add to footer
-        const visitorElement = document.createElement('p');
-        visitorElement.innerHTML = `Visitors: <strong>${visitCount}</strong>`;
-        visitorElement.style.marginTop = '10px';
-        visitorElement.style.color = '#666';
-        document.querySelector('footer .container').appendChild(visitorElement);
-        
-        // Initialize animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
+        // Update year in footer
+        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Riddhi Ghorui. All Rights Reserved. | Designed with Bootstrap`;
     </script>
 </body>
 </html>
