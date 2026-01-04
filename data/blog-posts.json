@@ -14,20 +14,24 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "The morning was crisp and cool, a gentle breeze carrying the scent of dew-kissed grass and blooming flowers. As I stepped into Cubbon Park with my friends, the city's noise seemed to fade away, replaced by the chirping of birds and the rustle of leaves."
+          "text": "1st January 2026. Almost eleven months since I left home, and today Bangalore felt a little less unfamiliar. The city woke up slowly, like someone stretching after a long sleep. We were four—Nilabha, Jyotirmoy, Apurba, and me—walking towards Cubbon Park, carrying nothing heavy except memories that don't ask permission before sitting beside you."
         },
         {
           "type": "paragraph",
-          "text": "There's something magical about starting a new year in nature's embrace. The park, with its centuries-old trees and winding pathways, felt like a living museum of memories."
+          "text": "Cubbon Park is older than most stories we tell ourselves. Built in 1870 during British rule, it stands quietly in the heart of Bangalore, surrounded by government buildings, museums, libraries, and roads that never truly rest. Inside, time behaves differently. Trees older than regrets, paths worn smooth by generations of footsteps, and silence that doesn't feel empty—only patient. Nearby places like Vidhana Soudha, the State Central Library, and MG Road exist almost like witnesses, watching the park breathe while the city runs."
         },
         {
           "type": "image",
-          "src": "images/IMG_20230216_150120.jpg",
-          "caption": "Morning light filtering through the trees"
+          "src": "images/Cubbon-Park-Bangalore-1.webp",
+          "caption": "Morning light through the trees of Cubbon Park"
         },
         {
           "type": "paragraph",
-          "text": "We walked for hours, sharing stories from the past year, dreams for the future, and simply enjoying the present moment. The video below captures some of that serenity..."
+          "text": "Families spread picnic mats, couples walked hand in hand as if hope had a physical form, and children ran without deadlines chasing them. Everyone seemed to arrive with the same invisible luggage—new resolutions, half-healed wounds, quiet prayers. The new year had just begun, and the air felt like a promise written in pencil, soft but sincere."
+        },
+        {
+          "type": "paragraph",
+          "text": "Not far from here is a Bengali colony, known mostly for its gold and jewellery craftsmanship—hands that turn metal into memory. I've passed it many times, but today it felt closer, like a reminder that roots don't disappear just because distance happens."
         },
         {
           "type": "video",
@@ -35,10 +39,14 @@
         },
         {
           "type": "paragraph",
-          "text": "As the sun rose higher, painting the sky in hues of orange and pink, I realized how important these moments of connection are - with nature, with friends, and with oneself."
+          "text": "The first day of the year wasn't extraordinary, yet it will stay. Maybe because some moments don't announce their importance. They sit quietly, like a bookmark in a book you don't finish—but never forget."
+        },
+        {
+          "type": "paragraph",
+          "text": "And yes, it was fun. The kind you remember later, when life gets loud again."
         }
       ],
-      "tags": ["Bangalore", "New Year", "Reflections", "Nature", "Friendship"],
+      "tags": ["Bangalore", "Cubbon Park", "New Year", "Reflections", "Memories", "Friendship", "Journey", "Bengali Colony"],
       "featured": true
     },
     {
@@ -50,16 +58,39 @@
       "readTime": "8 min read",
       "coverImage": "images/IMG_20230216_150120.jpg",
       "excerpt": "In today's polarized world, how do we bridge divides? This article explores my perspective on creating meaningful political conversations...",
-      "content": [],
-      "tags": ["Politics", "Society", "Dialogue"],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Content coming soon..."
+        }
+      ],
+      "tags": ["Politics", "Society", "Dialogue", "Communication"],
+      "featured": false
+    },
+    {
+      "id": 3,
+      "slug": "art-of-storytelling",
+      "title": "The Art of Storytelling: My Creative Process",
+      "date": "December 20, 2023",
+      "category": "Creative Writing",
+      "readTime": "6 min read",
+      "coverImage": "images/IMG_20230216_150120.jpg",
+      "excerpt": "How do stories come to life? Join me as I share my writing process, from inspiration to finished piece...",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Content coming soon..."
+        }
+      ],
+      "tags": ["Writing", "Creativity", "Storytelling", "Process"],
       "featured": false
     }
   ],
   "categories": {
-    "Journal": 8,
-    "Thoughts": 5,
-    "Politics": 3,
-    "Creative Writing": 4,
+    "Journal": 1,
+    "Thoughts": 1,
+    "Politics": 1,
+    "Creative Writing": 1,
     "Movies": 0,
     "Books": 0
   }
