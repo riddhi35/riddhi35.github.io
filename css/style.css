@@ -315,6 +315,154 @@ footer {
     .hero h1 {
         font-size: 2.5rem;
     }
+    /* Search Box */
+.search-box {
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #e74c3c;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.page-btn, .page-number {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.page-btn:hover, .page-number:hover {
+    background: #f8f9fa;
+}
+
+.page-number.active {
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+/* Active Filter Display */
+.active-filter {
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #e74c3c;
+}
+
+.clear-filter {
+    background: none;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.clear-filter:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Error Message */
+.error-message {
+    text-align: center;
+    padding: 40px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    color: #856404;
+    grid-column: 1 / -1;
+}
+
+.error-message button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+/* Video Preview */
+.video-preview {
+    margin: 20px 0;
+}
+
+.video-thumbnail {
+    position: relative;
+    height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.video-thumbnail:hover .play-button {
+    transform: scale(1.1);
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    background: #e74c3c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.play-button i {
+    color: white;
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+.video-player video {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Tag Hover Effects */
+.tag {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
     
     .nav-menu {
         display: none;
