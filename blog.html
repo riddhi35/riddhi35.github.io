@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -30,11 +31,26 @@
         </div>
     </section>
 
+    <!-- 🔍 Search Box (AFTER HERO SECTION) -->
+    <div class="container search-box">
+        <input type="text" id="search-input" placeholder="Search blog posts...">
+    </div>
+
+    <!-- 🏷 Active Filter Display -->
+    <div class="container">
+        <div id="active-filter" style="display: none;"></div>
+    </div>
+
+    <!-- 📄 Pagination -->
+    <div id="pagination" class="container"></div>
+
     <!-- Blog Content -->
     <div class="container blog-container">
         <div class="row">
+            
             <!-- Main Blog Posts -->
             <div class="col-md-8">
+
                 <!-- Featured Post -->
                 <div class="featured-post" id="featured-post">
                     <!-- Featured post will be loaded here by JavaScript -->
@@ -44,10 +60,12 @@
                 <div class="posts-grid" id="posts-grid">
                     <!-- Posts will be loaded here by JavaScript -->
                 </div>
+
             </div>
 
             <!-- Sidebar -->
             <div class="col-md-4">
+
                 <!-- About Card -->
                 <div class="sidebar-card">
                     <img src="images/IMG_20230216_150120.jpg" alt="Riddhi" class="author-img">
@@ -83,6 +101,7 @@
                         <!-- Tags will be loaded here by JavaScript -->
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
