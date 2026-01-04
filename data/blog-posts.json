@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "First Day of 2026: Cubbon Park Reflections",
+      "date": "January 1, 2026",
+      "category": "Journal",
+      "subcategory": "Thoughts",
+      "readTime": "3 min read",
+      "coverImage": "images/Cubbon-Park-Bangalore-1.webp",
+      "video": "images/WhatsApp Video 2026-01-04 at 8.22.26 PM.mp4",
+      "excerpt": "A quiet morning walk in Bangalore's Cubbon Park with friends, reflecting on memories, roots, and the gentle beginning of a new year...",
+      "content": "Full post content would go here...",
+      "tags": ["Bangalore", "New Year", "Reflections", "Nature"],
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "New Beginnings: My Journey into 2024",
+      "date": "January 1, 2024",
+      "category": "Journal",
+      "subcategory": "Thoughts",
+      "readTime": "5 min read",
+      "coverImage": "images/IMG_20230216_150120.jpg",
+      "excerpt": "Starting a new year with fresh perspectives and goals...",
+      "content": "Full post content...",
+      "tags": ["New Year", "Goals", "Personal Growth"],
+      "featured": false
+    }
+  ],
+  "categories": {
+    "Journal": 8,
+    "Thoughts": 5,
+    "Politics": 3,
+    "Creative Writing": 4,
+    "Movies": 0,
+    "Books": 0
+  }
+}
