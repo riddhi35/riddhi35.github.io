@@ -3,383 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Day of 2026: Cubbon Park Reflections | Riddhi's Blog</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <title>Loading Post...</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #2c5530;
-            --secondary-color: #73956f;
-            --accent-color: #d4b483;
-            --text-color: #333333;
-            --light-bg: #f8f5f0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-            padding-top: 80px;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Crimson Pro', serif;
-            font-weight: 600;
-        }
-        
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            padding: 15px 0;
-        }
-        
-        .blog-header {
-            background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.8)), 
-                        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0 60px;
-            text-align: center;
-        }
-        
-        .blog-title {
-            font-size: 3.2rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-        
-        .blog-meta {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
-        
-        .blog-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            padding: 50px;
-            margin-top: -40px;
-            position: relative;
-        }
-        
-        .blog-date {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 30px;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        
-        .blog-content {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: #444;
-        }
-        
-        .blog-content p {
-            margin-bottom: 25px;
-        }
-        
-        .blog-content p:first-child:first-letter {
-            font-size: 3.5rem;
-            float: left;
-            line-height: 1;
-            margin-right: 10px;
-            color: var(--primary-color);
-            font-family: 'Crimson Pro', serif;
-            font-weight: 600;
-        }
-        
-        .quote-box {
-            border-left: 4px solid var(--accent-color);
-            padding-left: 25px;
-            margin: 40px 0;
-            font-style: italic;
-            font-size: 1.25rem;
-            color: var(--primary-color);
-        }
-        
-        .location-info {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            margin: 40px 0;
-            border-left: 4px solid var(--secondary-color);
-        }
-        
-        .location-info h5 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .companions {
-            display: flex;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .companion-tag {
-            background: var(--light-bg);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            color: var(--primary-color);
-            border: 1px solid #ddd;
-        }
-        
-        .featured-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin: 40px 0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .back-to-blog {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 30px;
-            transition: all 0.3s;
-        }
-        
-        .back-to-blog:hover {
-            gap: 15px;
-            color: var(--secondary-color);
-        }
-        
-        .share-section {
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            padding: 30px 0;
-            margin: 50px 0;
-            text-align: center;
-        }
-        
-        .share-btn {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin: 0 8px;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-        
-        .share-btn:hover {
-            transform: translateY(-3px);
-        }
-        
-        .twitter-bg { background: #1DA1F2; }
-        .facebook-bg { background: #4267B2; }
-        .instagram-bg { background: #E4405F; }
-        .whatsapp-bg { background: #25D366; }
-        
-        .next-prev-links {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
-        
-        .nav-link-post {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            max-width: 45%;
-        }
-        
-        .nav-link-post:hover {
-            color: var(--secondary-color);
-        }
-        
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 40px 0;
-            margin-top: 80px;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .blog-container {
-                padding: 30px 20px;
-                margin: -20px 15px 0;
-            }
-            
-            .blog-title {
-                font-size: 2.2rem;
-            }
-            
-            .blog-content {
-                font-size: 1.05rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary-color);">RIDDHI</a>
-            <div class="collapse navbar-collapse justify-content-end">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="../index.html">Home</a>
-                    <a class="nav-link" href="../blog.html">Blog</a>
-                    <a class="nav-link" href="../vlogs.html">Vlogs</a>
-                    <a class="nav-link" href="../index.html#contact">Contact</a>
-                </div>
-            </div>
+            <a href="../index.html" class="logo">RIDDHI</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../photography.html">Photography</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Blog Header -->
-    <header class="blog-header">
-        <div class="container">
-            <div class="blog-meta">
-                <i class="far fa-calendar me-1"></i> 
-                <span>January 1, 2026</span>
-                <i class="far fa-clock ms-3 me-1"></i>
-                <span>3 min read</span>
+    <!-- Blog Post Header -->
+    <header class="blog-post-header">
+        <div class="post-header-content">
+            <h1 id="post-title">Loading...</h1>
+            <div class="post-meta-large">
+                <span id="post-date" class="date">January 1, 2026</span>
+                <span id="post-read-time" class="read-time">3 min read</span>
+                <span id="post-category" class="category-tag">Journal</span>
             </div>
-            <h1 class="blog-title">First Day of 2026: Cubbon Park Reflections</h1>
-            <p class="lead" style="max-width: 700px; margin: 0 auto; opacity: 0.95;">
-                A quiet morning walk, memories that sit without permission, and the patient silence of trees older than regrets
-            </p>
         </div>
     </header>
 
     <!-- Blog Content -->
     <main class="container">
-        <div class="blog-container">
-            <!-- Back to Blog Link -->
-            <a href="../blog.html" class="back-to-blog">
-                <i class="fas fa-arrow-left"></i> Back to All Posts
-            </a>
-            
-            <!-- Blog Date -->
-            <div class="blog-date">1st January 2026</div>
-            
-            <!-- Companions -->
-            <div>
-                <p style="color: #666; margin-bottom: 10px;"><i class="fas fa-users me-2"></i>With:</p>
-                <div class="companions">
-                    <span class="companion-tag">Nilabha</span>
-                    <span class="companion-tag">Jyotirmoy</span>
-                    <span class="companion-tag">Apurba</span>
+        <article class="blog-content">
+            <div id="post-content">
+                <!-- Content will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Tags -->
+            <div class="tags-container" style="margin: 40px 0;">
+                <h3>Tags:</h3>
+                <div id="post-tags" class="tags-cloud">
+                    <!-- Tags will be loaded here -->
                 </div>
             </div>
-            
-            <!-- Featured Image -->
-            <img src="https://images.unsplash.com/photo-1580229085925-603a605c431d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-                 alt="Cubbon Park Pathway" class="featured-image">
-            
-            <!-- Blog Content -->
-            <article class="blog-content">
-                <p>Almost eleven months since I left home, and today Bangalore felt a little less unfamiliar. The city woke up slowly, like someone stretching after a long sleep. We were four—Nilabha, Jyotirmoy, Apurba, and me—walking towards Cubbon Park, carrying nothing heavy except memories that don't ask permission before sitting beside you.</p>
-                
-                <div class="location-info">
-                    <h5><i class="fas fa-map-marker-alt me-2"></i>Cubbon Park, Bangalore</h5>
-                    <p>Built in 1870 during British rule, it stands quietly in the heart of Bangalore, surrounded by government buildings, museums, libraries, and roads that never truly rest. Inside, time behaves differently.</p>
-                    <p style="margin-bottom: 0; font-size: 0.95rem; color: #666;">
-                        <strong>Nearby landmarks:</strong> Vidhana Soudha, State Central Library, MG Road, and the Bengali jewellery colony
-                    </p>
+
+            <!-- Author Bio -->
+            <div class="author-bio">
+                <img src="../images/IMG_20230216_150120.jpg" alt="Riddhi">
+                <div class="bio-content">
+                    <h3>Riddhi</h3>
+                    <p>Writer, thinker, and storyteller based in Bangalore. Passionate about capturing moments through words and images.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
-                
-                <p>Trees older than regrets, paths worn smooth by generations of footsteps, and silence that doesn't feel empty—only patient. Nearby places like Vidhana Soudha, the State Central Library, and MG Road exist almost like witnesses, watching the park breathe while the city runs.</p>
-                
-                <div class="quote-box">
-                    "The new year had just begun, and the air felt like a promise written in pencil, soft but sincere."
-                </div>
-                
-                <p>Families spread picnic mats, couples walked hand in hand as if hope had a physical form, and children ran without deadlines chasing them. Everyone seemed to arrive with the same invisible luggage—new resolutions, half-healed wounds, quiet prayers.</p>
-                
-                <p>Not far from here is a Bengali colony, known mostly for its gold and jewellery craftsmanship—hands that turn metal into memory.It reminds me  that roots don't disappear just because distance happens.</p>
-                
-                <p>The first day of the year wasn't extraordinary, yet it will stay. Maybe because some moments don't announce their importance. They sit quietly, like a bookmark in a book you don't finish—but never forget.</p>
-                
-                <p>And yes, it was fun. The kind you remember later, when life gets loud again.</p>
-            </article>
-            
-            <!-- Share Section -->
-            <div class="share-section">
-                <p style="margin-bottom: 20px; font-weight: 500; color: var(--primary-color);">
-                    <i class="fas fa-share-alt me-2"></i>If this resonated, share it:
-                </p>
-                <a href="#" class="share-btn twitter-bg"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="share-btn facebook-bg"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="share-btn instagram-bg"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="share-btn whatsapp-bg"><i class="fab fa-whatsapp"></i></a>
             </div>
-            
-            <!-- Next/Previous Posts -->
-            <div class="next-prev-links">
-                <a href="../blog.html" class="nav-link-post">
-                    <i class="fas fa-arrow-left me-2"></i>
-                    <span>All Blog Posts</span>
-                </a>
-                <a href="#" class="nav-link-post text-end">
-                    <span>Next: Reflections on Time</span>
-                    <i class="fas fa-arrow-right ms-2"></i>
-                </a>
+
+            <!-- Navigation between posts -->
+            <div class="post-navigation">
+                <a href="#" id="prev-post" class="nav-link prev">Previous Post</a>
+                <a href="../blog.html" class="nav-link">All Posts</a>
+                <a href="#" id="next-post" class="nav-link next">Next Post</a>
             </div>
-        </div>
+        </article>
+
+        <!-- Related Posts -->
+        <section class="related-posts" id="related-posts-section">
+            <h2>Related Posts</h2>
+            <div id="related-posts" class="related-grid">
+                <!-- Related posts will be loaded here -->
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p style="margin-bottom: 10px;">© 2026 Riddhi Ghorui. All reflections preserved.</p>
-            <p style="opacity: 0.8; font-size: 0.9rem;">
-                Written in Bangalore | Published from riddhi35.github.io
-            </p>
+            <p>&copy; 2024 Riddhi. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Update year in footer
-        document.addEventListener('DOMContentLoaded', function() {
-            const year = new Date().getFullYear();
-            document.querySelector('footer p').innerHTML = `© ${year} Riddhi Ghorui. All reflections preserved.`;
-        });
-        
-        // Smooth scroll for back to top
-        document.querySelector('.back-to-blog').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.history.back();
-        });
-    </script>
+    <script src="../js/blog-post.js"></script>
 </body>
 </html>
