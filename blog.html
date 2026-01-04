@@ -7,112 +7,100 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Simple inline CSS to ensure basic styling -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+        }
+        .navbar {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .hero {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 100px 20px 50px;
+            margin-top: 60px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Navigation -->
+    <!-- Simple Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">RIDDHI</a>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="photography.html">Photography</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>My Thoughts & Writings</h1>
-            <p>A collection of my reflections, stories, and perspectives</p>
+            <h1>My Blog</h1>
+            <p>Thoughts, stories, and reflections</p>
         </div>
     </section>
 
-    <!-- 🔍 Search Box (AFTER HERO SECTION) -->
-    <div class="container search-box">
-        <input type="text" id="search-input" placeholder="Search blog posts...">
-    </div>
-
-    <!-- 🏷 Active Filter Display -->
-    <div class="container">
-        <div id="active-filter" style="display: none;"></div>
-    </div>
-
-    <!-- 📄 Pagination -->
-    <div id="pagination" class="container"></div>
-
-    <!-- Blog Content -->
-    <div class="container blog-container">
-        <div class="row">
-            
-            <!-- Main Blog Posts -->
-            <div class="col-md-8">
-
-                <!-- Featured Post -->
-                <div class="featured-post" id="featured-post">
-                    <!-- Featured post will be loaded here by JavaScript -->
-                </div>
-
-                <!-- All Posts -->
-                <div class="posts-grid" id="posts-grid">
-                    <!-- Posts will be loaded here by JavaScript -->
-                </div>
-
-            </div>
-
-            <!-- Sidebar -->
-            <div class="col-md-4">
-
-                <!-- About Card -->
-                <div class="sidebar-card">
-                    <img src="images/IMG_20230216_150120.jpg" alt="Riddhi" class="author-img">
-                    <h3>Riddhi</h3>
-                    <p>Writer, Thinker, Storyteller</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-
-                <!-- Categories -->
-                <div class="sidebar-card">
-                    <h3>Categories</h3>
-                    <ul class="categories-list" id="categories-list">
-                        <!-- Categories will be loaded here by JavaScript -->
-                    </ul>
-                </div>
-
-                <!-- Recent Posts -->
-                <div class="sidebar-card">
-                    <h3>Recent Posts</h3>
-                    <ul class="recent-posts" id="recent-posts">
-                        <!-- Recent posts will be loaded here by JavaScript -->
-                    </ul>
-                </div>
-
-                <!-- Tags -->
-                <div class="sidebar-card">
-                    <h3>Tags</h3>
-                    <div class="tags-cloud" id="tags-cloud">
-                        <!-- Tags will be loaded here by JavaScript -->
-                    </div>
-                </div>
-
+    <!-- Blog Posts -->
+    <main class="container">
+        <div id="posts-grid" class="posts-grid">
+            <!-- Posts will be loaded here by JavaScript -->
+            <div style="text-align: center; padding: 40px; color: #666;">
+                <p>Loading blog posts...</p>
+                <div style="width: 50px; height: 50px; border: 5px solid #f3f3f3; 
+                     border-top: 5px solid #e74c3c; border-radius: 50%; 
+                     animation: spin 1s linear infinite; margin: 20px auto;"></div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Riddhi. All rights reserved.</p>
-        </div>
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 30px; margin-top: 50px;">
+        <p>&copy; 2024 Riddhi. All rights reserved.</p>
     </footer>
 
+    <!-- Load JavaScript -->
     <script src="js/blog.js"></script>
+    
+    <!-- Fallback if JavaScript fails -->
+    <noscript>
+        <style>
+            #posts-grid > div { display: none; }
+        </style>
+        <div class="container" style="text-align: center; padding: 50px;">
+            <h2>JavaScript Required</h2>
+            <p>Please enable JavaScript to view the blog posts.</p>
+        </div>
+    </noscript>
+    
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </body>
 </html>
