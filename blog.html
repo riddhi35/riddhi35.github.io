@@ -3,302 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog | Riddhi's Thoughts & Writings</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Riddhi's Blog</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Copy all the CSS from your main index.html file */
-        :root {
-            --primary-color: #6c63ff;
-            --secondary-color: #4a44c6;
-            --dark-color: #2a2a2a;
-            --light-color: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            padding-top: 80px;
-        }
-        
-        .navbar {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .blog-header {
-            background: linear-gradient(135deg, #6c63ff 0%, #4a44c6 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .blog-post-card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            margin-bottom: 30px;
-        }
-        
-        .blog-post-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .blog-categories {
-            margin: 40px 0;
-        }
-        
-        .category-btn {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            padding: 8px 20px;
-            margin: 5px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        
-        .category-btn.active,
-        .category-btn:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        
-        .blog-meta {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-        
-        .read-more-btn {
-            color: var(--primary-color);
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .read-more-btn:hover {
-            color: var(--secondary-color);
-        }
-        
-        .sidebar-widget {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .recent-post-item {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .recent-post-item:last-child {
-            border-bottom: none;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation (Same as homepage) -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">RIDDHI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="vlogs.html">Vlogs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-                </ul>
-            </div>
+            <a href="index.html" class="logo">RIDDHI</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Blog Header -->
-    <header class="blog-header">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1 class="display-4 fw-bold">My Thoughts & Writings</h1>
-            <p class="lead">Sharing insights, reflections, and perspectives from my journey</p>
-        </div>
-    </header>
-
-    <!-- Blog Content -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <!-- Main Content -->
-                <div class="col-lg-8">
-                    <!-- Blog Categories -->
-                    <div class="blog-categories text-center">
-                        <button class="category-btn active" data-filter="all">All Posts</button>
-                        <button class="category-btn" data-filter="thoughts">Thoughts</button>
-                        <button class="category-btn" data-filter="politics">Politics</button>
-                        <button class="category-btn" data-filter="journal">Journal</button>
-                        <button class="category-btn" data-filter="writing">Creative Writing</button>
-                    </div>
-
-                    <!-- Blog Post 1: Your January 1st Blog -->
-                    <!-- Add this card in the blog list section -->
-<div class="blog-post-card" data-category="journal thoughts">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="https://images.unsplash.com/photo-1580229085925-603a605c431d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
-                 class="img-fluid h-100" alt="Cubbon Park" style="object-fit: cover;">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body p-4">
-                <div class="blog-meta mb-2">
-                    <i class="far fa-calendar me-1"></i> January 1, 2026
-                    <i class="far fa-folder ms-3 me-1"></i> Journal, Thoughts
-                    <i class="far fa-clock ms-3 me-1"></i> 3 min read
-                </div>
-                <h3 class="card-title">First Day of 2026: Cubbon Park Reflections</h3>
-                <p class="card-text">A quiet morning walk in Bangalore's Cubbon Park with friends, reflecting on memories, roots, and the gentle beginning of a new year...</p>
-                <a href="blogs/first-january-2026.html" class="read-more-btn">Read Full Post →</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-                    <!-- Blog Post 2 -->
-                    <div class="blog-post-card" data-category="politics">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
-                                     class="img-fluid h-100" alt="Political Views" style="object-fit: cover;">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-4">
-                                    <div class="blog-meta mb-2">
-                                        <i class="far fa-calendar me-1"></i> December 25, 2023
-                                        <i class="far fa-folder ms-3 me-1"></i> Politics
-                                        <i class="far fa-clock ms-3 me-1"></i> 8 min read
-                                    </div>
-                                    <h3 class="card-title">Modern Political Discourse: Finding Common Ground</h3>
-                                    <p class="card-text">In today's polarized world, how do we bridge divides? This article explores my perspective on creating meaningful political conversations...</p>
-                                    <a href="blogs/political-views.html" class="read-more-btn">Read Full Post →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Blog Post 3 -->
-                    <div class="blog-post-card" data-category="writing">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
-                                     class="img-fluid h-100" alt="Creative Writing" style="object-fit: cover;">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-4">
-                                    <div class="blog-meta mb-2">
-                                        <i class="far fa-calendar me-1"></i> December 20, 2023
-                                        <i class="far fa-folder ms-3 me-1"></i> Creative Writing
-                                        <i class="far fa-clock ms-3 me-1"></i> 6 min read
-                                    </div>
-                                    <h3 class="card-title">The Art of Storytelling: My Creative Process</h3>
-                                    <p class="card-text">How do stories come to life? Join me as I share my writing process, from initial inspiration to final draft...</p>
-                                    <a href="blogs/storytelling-process.html" class="read-more-btn">Read Full Post →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sidebar -->
-                <div class="col-lg-4">
-                    <!-- About Widget -->
-                    <div class="sidebar-widget">
-                        <h4>About This Blog</h4>
-                        <p>Welcome to my personal blog space. Here I share thoughts, political views, creative writing, and journal entries from my journey.</p>
-                        <p>Expect authentic reflections and honest perspectives.</p>
-                    </div>
-
-                    <!-- Categories Widget -->
-                    <div class="sidebar-widget">
-                        <h4>Categories</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-decoration-none d-block py-2" data-filter="thoughts">Thoughts (5)</a></li>
-                            <li><a href="#" class="text-decoration-none d-block py-2" data-filter="politics">Politics (3)</a></li>
-                            <li><a href="#" class="text-decoration-none d-block py-2" data-filter="journal">Journal (8)</a></li>
-                            <li><a href="#" class="text-decoration-none d-block py-2" data-filter="writing">Creative Writing (4)</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Recent Posts Widget -->
-                    <div class="sidebar-widget">
-                        <h4>Recent Posts</h4>
-                        <div class="recent-post-item">
-                            <a href="blogs/first-january-blog.html" class="text-decoration-none">New Beginnings: My Journey into 2024</a>
-                            <div class="blog-meta">Jan 1, 2024</div>
-                        </div>
-                        <div class="recent-post-item">
-                            <a href="blogs/political-views.html" class="text-decoration-none">Modern Political Discourse</a>
-                            <div class="blog-meta">Dec 25, 2023</div>
-                        </div>
-                        <div class="recent-post-item">
-                            <a href="blogs/storytelling-process.html" class="text-decoration-none">The Art of Storytelling</a>
-                            <div class="blog-meta">Dec 20, 2023</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1>My Thoughts & Writings</h1>
+            <p>A collection of my reflections, stories, and perspectives</p>
         </div>
     </section>
 
-    <!-- Footer (Same as homepage) -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Riddhi Ghorui</h5>
-                    <p>Thoughts • Photography • Vlogs • Politics • Journal</p>
+    <!-- Blog Content -->
+    <div class="container blog-container">
+        <div class="row">
+            <!-- Main Blog Posts -->
+            <div class="col-md-8">
+                <!-- Featured Post -->
+                <div class="featured-post" id="featured-post">
+                    <!-- Featured post will be loaded here by JavaScript -->
                 </div>
-                <div class="col-md-6 text-end">
-                    <p>Visit: <strong>riddhi35.github.io</strong></p>
-                    <p>© 2024 All Rights Reserved</p>
+
+                <!-- All Posts -->
+                <div class="posts-grid" id="posts-grid">
+                    <!-- Posts will be loaded here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <!-- About Card -->
+                <div class="sidebar-card">
+                    <img src="images/IMG_20230216_150120.jpg" alt="Riddhi" class="author-img">
+                    <h3>Riddhi</h3>
+                    <p>Writer, Thinker, Storyteller</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="sidebar-card">
+                    <h3>Categories</h3>
+                    <ul class="categories-list" id="categories-list">
+                        <!-- Categories will be loaded here by JavaScript -->
+                    </ul>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="sidebar-card">
+                    <h3>Recent Posts</h3>
+                    <ul class="recent-posts" id="recent-posts">
+                        <!-- Recent posts will be loaded here by JavaScript -->
+                    </ul>
+                </div>
+
+                <!-- Tags -->
+                <div class="sidebar-card">
+                    <h3>Tags</h3>
+                    <div class="tags-cloud" id="tags-cloud">
+                        <!-- Tags will be loaded here by JavaScript -->
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Riddhi. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Category Filtering
-        document.querySelectorAll('.category-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                // Update active button
-                document.querySelectorAll('.category-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                this.classList.add('active');
-                
-                const filter = this.getAttribute('data-filter');
-                const posts = document.querySelectorAll('.blog-post-card');
-                
-                posts.forEach(post => {
-                    if (filter === 'all' || post.getAttribute('data-category').includes(filter)) {
-                        post.style.display = 'flex';
-                    } else {
-                        post.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Sidebar category links
-        document.querySelectorAll('.sidebar-widget a[data-filter]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const filter = this.getAttribute('data-filter');
-                // Trigger click on corresponding category button
-                document.querySelector(`.category-btn[data-filter="${filter}"]`).click();
-            });
-        });
-    </script>
+    <script src="js/blog.js"></script>
 </body>
 </html>
