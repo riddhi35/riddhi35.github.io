@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riddhi Ghorui | Personal Portfolio</title>
+    <title>Photography Gallery | Riddhi Ghorui</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #6c63ff;
-            --secondary-color: #4a44c6;
-            --dark-color: #2a2a2a;
-            --light-color: #f8f9fa;
-            --gray-color: #6c757d;
+            --dark-bg: rgba(10, 10, 10, 0.95);
+            --card-bg: rgba(20, 20, 20, 0.85);
+            --accent-gold: #D4AF37;
+            --accent-silver: #C0C0C0;
+            --text-light: #f0f0f0;
+            --text-gray: #b0b0b0;
+            --glass-effect: rgba(255, 255, 255, 0.05);
         }
         
         * {
@@ -28,962 +30,733 @@
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 80% 20%, rgba(192, 192, 192, 0.03) 0%, transparent 20%);
+            padding-top: 80px;
         }
         
         h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
         }
         
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 30px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 30px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--dark-color);
-        }
-        
-        .section-title p {
-            color: var(--gray-color);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Navbar Styles */
+        /* Navbar */
         .navbar {
-            padding: 20px 0;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
+            background: rgba(15, 15, 15, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 15px 0;
         }
         
         .navbar-brand {
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-silver));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-weight: 700;
-            color: var(--dark-color);
         }
         
-        .navbar-nav .nav-link {
-            color: var(--dark-color);
+        .nav-link {
+            color: var(--text-gray) !important;
             font-weight: 500;
             margin: 0 10px;
-            padding: 8px 15px;
-            border-radius: 20px;
+            position: relative;
+            padding: 8px 15px !important;
             transition: all 0.3s ease;
         }
         
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: white;
-            background-color: var(--primary-color);
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-gold) !important;
         }
         
-        /* Hero Section */
-        .hero-section {
-            padding: 180px 0 100px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--gray-color);
-            margin-bottom: 30px;
-        }
-        
-        .hero-image {
-            position: relative;
-            text-align: center;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Latest Post in Hero */
-        .latest-post {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s ease;
-        }
-        
-        .latest-post:hover {
-            transform: translateY(-5px);
-        }
-        
-        .latest-post h5 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .latest-post h5 i {
-            font-size: 1.2em;
-        }
-        
-        /* About Section */
-        .about-img {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-content h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .about-content p {
-            color: var(--gray-color);
-            margin-bottom: 20px;
-        }
-        
-        .skill-item {
-            margin-bottom: 25px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background-color: #e9ecef;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-per {
-            height: 100%;
-            background-color: var(--primary-color);
-            border-radius: 4px;
-        }
-        
-        /* Portfolio Section */
-        .portfolio-filter {
-            margin-bottom: 40px;
-        }
-        
-        .filter-btn {
-            background: none;
-            border: none;
-            padding: 8px 20px;
-            margin: 0 5px;
-            color: var(--gray-color);
-            font-weight: 500;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn.active,
-        .filter-btn:hover {
-            color: white;
-            background-color: var(--primary-color);
-        }
-        
-        .portfolio-item {
-            margin-bottom: 30px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .portfolio-img {
-            position: relative;
-            overflow: hidden;
-            height: 250px;
-        }
-        
-        .portfolio-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-overlay {
+        .nav-link::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(108, 99, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
             transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
         
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
         }
         
-        .portfolio-info {
+        /* Gallery Header */
+        .gallery-header {
             text-align: center;
-            color: white;
-            padding: 20px;
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
         }
         
-        /* Featured Blog Section */
-        .featured-blog-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .gallery-header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            z-index: -1;
         }
         
-        .featured-blog-section .section-title h2,
-        .featured-blog-section .section-title p {
-            color: white;
+        .gallery-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-silver));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
         }
         
-        .blog-featured-card {
+        .gallery-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Gallery Grid */
+        .gallery-container {
+            padding: 40px 0 80px;
+        }
+        
+        .photo-card {
+            background: var(--card-bg);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .blog-featured-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .blog-badge {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        
-        /* Blog Section */
-        .blog-item {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
             margin-bottom: 30px;
-            background: white;
+            height: 350px;
         }
         
-        .blog-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        .photo-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(212, 175, 55, 0.3);
         }
         
-        .blog-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .blog-img img {
+        .photo-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
+            cursor: pointer;
         }
         
-        .blog-item:hover .blog-img img {
+        .photo-card:hover .photo-image {
             transform: scale(1.1);
         }
         
-        .blog-content {
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 10, 10, 0.95));
             padding: 25px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
         }
         
-        .blog-meta {
+        .photo-card:hover .photo-overlay {
+            transform: translateY(0);
+        }
+        
+        .photo-title {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--accent-gold);
+        }
+        
+        .photo-meta {
+            color: var(--text-gray);
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            color: var(--gray-color);
-            font-size: 0.9rem;
+            gap: 15px;
         }
         
-        .blog-meta span {
-            margin-right: 15px;
+        .photo-meta i {
+            color: var(--accent-silver);
+            margin-right: 5px;
         }
         
-        .blog-content h4 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-        
-        .contact-info-item {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-info-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(108, 99, 255, 0.1);
+        .view-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: rgba(10, 10, 10, 0.8);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary-color);
+            color: var(--accent-gold);
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .photo-card:hover .view-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .view-btn:hover {
+            background: var(--accent-gold);
+            color: #000;
+            transform: scale(1.1);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: rgba(15, 15, 15, 0.6);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Lightbox Modal */
+        .lightbox-modal .modal-content {
+            background: rgba(5, 5, 5, 0.98);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+        
+        .lightbox-modal .modal-header {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 20px;
+            background: rgba(10, 10, 10, 0.9);
+        }
+        
+        .lightbox-modal .modal-title {
+            color: var(--accent-gold);
             font-size: 1.5rem;
         }
         
-        .form-control {
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
+        .lightbox-modal .btn-close {
+            filter: invert(1) brightness(200%);
+            opacity: 0.8;
+        }
+        
+        .lightbox-modal .modal-body {
+            padding: 0;
+            text-align: center;
+        }
+        
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 70vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .lightbox-info {
+            padding: 25px;
+            background: rgba(10, 10, 10, 0.9);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .lightbox-title {
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .lightbox-details {
+            color: var(--text-gray);
             margin-bottom: 20px;
         }
         
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            min-width: 150px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .download-btn {
+            background: linear-gradient(45deg, var(--accent-gold), #b8941f);
+            color: #000;
+            border-color: var(--accent-gold);
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(45deg, #b8941f, var(--accent-gold));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .share-btn {
+            background: transparent;
+            color: var(--accent-silver);
+            border-color: rgba(192, 192, 192, 0.5);
+        }
+        
+        .share-btn:hover {
+            background: rgba(192, 192, 192, 0.1);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Navigation Arrows */
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(10, 10, 10, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(5px);
+            z-index: 1050;
+        }
+        
+        .lightbox-nav:hover {
+            background: var(--accent-gold);
+            color: #000;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .nav-prev {
+            left: 20px;
+        }
+        
+        .nav-next {
+            right: 20px;
         }
         
         /* Footer */
         .footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 60px 0 20px;
+            background: rgba(5, 5, 5, 0.95);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 80px;
         }
         
-        .footer-links h5 {
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-silver));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
+            display: inline-block;
         }
         
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links ul li {
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            display: block;
             margin-bottom: 10px;
-        }
-        
-        .footer-links ul li a {
-            color: #b0b0b0;
             transition: color 0.3s ease;
         }
         
-        .footer-links ul li a:hover {
-            color: white;
+        .footer-links a:hover {
+            color: var(--accent-gold);
         }
         
         .social-icons {
             display: flex;
             gap: 15px;
+            margin-top: 20px;
         }
         
         .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--accent-silver);
+            text-decoration: none;
             transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
         
         .social-icon:hover {
-            background-color: var(--primary-color);
+            background: var(--accent-gold);
+            color: #000;
             transform: translateY(-3px);
         }
         
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            margin-top: 40px;
+        .copyright {
             text-align: center;
-            color: #b0b0b0;
+            color: var(--text-gray);
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-content h1 {
+            .gallery-title {
                 font-size: 2.5rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
+            .photo-card {
+                height: 300px;
             }
             
-            .hero-section {
-                padding: 150px 0 80px;
-                text-align: center;
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
             }
             
-            .portfolio-img {
-                height: 200px;
+            .nav-prev {
+                left: 10px;
             }
+            
+            .nav-next {
+                right: 10px;
+            }
+            
+            .action-btn {
+                min-width: 120px;
+                padding: 10px 20px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* Loading Animation */
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(212, 175, 55, 0.1);
+            border-top-color: var(--accent-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 50px auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">RIDDHI</a>
+            <a class="navbar-brand" href="index.html">RIDDHI</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="index.html#portfolio">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link active" href="photography.html">Photography</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
+                        <a class="nav-link" href="blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="index.html#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <!-- Gallery Header -->
+    <header class="gallery-header">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1>Hi, I'm <span style="color: var(--primary-color);">Riddhi Ghorui</span></h1>
-                        <p>A creative thinker, writer, photographer, and content creator passionate about sharing perspectives through multiple mediums.</p>
-                        <div class="mt-4">
-                            <a href="#portfolio" class="btn btn-primary me-3">View My Work</a>
-                            <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
-                        </div>
-                        
-                        <!-- Latest Post Section -->
-                        <div class="latest-post">
-                            <h5><i class="fas fa-feather-alt"></i> Latest Blog Post</h5>
-                            <h4>First Day of 2026: Cubbon Park Reflections</h4>
-                            <p class="text-muted mb-3">A quiet morning walk in Bangalore with friends, reflecting on memories and new beginnings. Published on January 1, 2026.</p>
-                            <a href="blogs/first-january-2026.html" class="btn btn-primary btn-sm">
-                                Read Full Post <i class="fas fa-arrow-right ms-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="hero-image">
-                        <img src="https://i.postimg.cc/BQpCS9Hz/RG-photo.jpg" alt="Riddhi Ghorui">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Get to know more about my journey, skills, and what drives my creative process</p>
-            </div>
-            
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-img">
-                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="About Me">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3>Creative Mind & Passionate Soul</h3>
-                        <p>I'm a multi-faceted creator who expresses through writing, photography, vlogging, and thoughtful commentary. My work reflects my journey of self-discovery and my perspective on the world around me.</p>
-                        <p>I believe in authentic storytelling and creating content that resonates, challenges, and inspires.</p>
-                        
-                        <div class="skills mt-4">
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Writing & Content Creation</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-per" style="width: 95%;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Photography</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-per" style="width: 90%;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Video Production</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-per" style="width: 85%;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Political Analysis</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-per" style="width: 80%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section-padding" style="background-color: #f8f9fa;">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Portfolio</h2>
-                <p>A collection of my work across different creative domains</p>
-            </div>
-            
-            <div class="portfolio-filter text-center">
-                <button class="filter-btn active" data-filter="*">All</button>
-                <button class="filter-btn" data-filter=".writing">Writing</button>
-                <button class="filter-btn" data-filter=".photography">Photography</button>
-                <button class="filter-btn" data-filter=".vlogs">Vlogs</button>
-                <button class="filter-btn" data-filter=".politics">Politics</button>
-            </div>
-            
-            <div class="row portfolio-grid">
-                <!-- Featured Blog in Portfolio -->
-                <div class="col-lg-4 col-md-6 portfolio-item writing">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1580229085925-603a605c431d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="January 1st Blog">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>First Day of 2026</h4>
-                                <p>Personal reflections from Cubbon Park</p>
-                                <a href="blogs/first-january-2026.html" class="btn btn-sm btn-light mt-2">Read Blog</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photography Portfolio Item -->
-                <div class="col-lg-4 col-md-6 portfolio-item photography">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photography Portfolio">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Nature Photography</h4>
-                                <p>Capturing beauty in natural landscapes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Vlogs Portfolio Item -->
-                <div class="col-lg-4 col-md-6 portfolio-item vlogs">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/phone-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vlogs Portfolio">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Daily Life Vlogs</h4>
-                                <p>Documenting everyday moments and experiences</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Politics Portfolio Item -->
-                <div class="col-lg-4 col-md-6 portfolio-item politics">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Politics Portfolio">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Political Commentary</h4>
-                                <p>Analysis and perspectives on current affairs</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Writing Portfolio Item 2 -->
-                <div class="col-lg-4 col-md-6 portfolio-item writing">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Writing Portfolio 2">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Creative Writing</h4>
-                                <p>Short stories and fictional narratives</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photography Portfolio Item 2 -->
-                <div class="col-lg-4 col-md-6 portfolio-item photography">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photography Portfolio 2">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Portrait Photography</h4>
-                                <p>Capturing human emotions and expressions</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Blog Section -->
-    <section id="blog" class="section-padding featured-blog-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Blog Post</h2>
-                <p>My latest reflection on life, memories, and new beginnings</p>
-            </div>
-            
-            <div class="row justify-content-center">
+            <h1 class="gallery-title">Through My Lens</h1>
+            <p class="gallery-subtitle">Capturing moments, emotions, and stories through photography. Each image tells a unique story from my journey.</p>
+            <div class="row justify-content-center mt-5">
                 <div class="col-lg-10">
-                    <div class="blog-featured-card bg-white">
-                        <div class="row g-0">
-                            <div class="col-md-6">
-                                <img src="https://images.unsplash.com/photo-1580229085925-603a605c431d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                                     class="img-fluid h-100" alt="Cubbon Park Reflection" style="object-fit: cover;">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="p-4 p-md-5 d-flex flex-column h-100">
-                                    <span class="blog-badge mb-3">Latest Post</span>
-                                    <h3 class="mb-4" style="color: var(--dark-color);">First Day of 2026: Cubbon Park Reflections</h3>
-                                    <div class="mb-4" style="color: var(--gray-color);">
-                                        <span class="me-3"><i class="far fa-calendar me-1"></i> January 1, 2026</span>
-                                        <span><i class="far fa-clock me-1"></i> 3 min read</span>
-                                    </div>
-                                    <p style="color: var(--gray-color); line-height: 1.8; flex-grow: 1;">
-                                        "Almost eleven months since I left home, and today Bangalore felt a little less unfamiliar. 
-                                        The city woke up slowly, like someone stretching after a long sleep. We were four—Nilabha, 
-                                        Jyotirmoy, Apurba, and me—walking towards Cubbon Park, carrying nothing heavy except memories 
-                                        that don't ask permission before sitting beside you..."
-                                    </p>
-                                    <div class="mt-4">
-                                        <a href="blogs/first-january-2026.html" class="btn btn-primary me-3">
-                                            Read Full Post <i class="fas fa-arrow-right ms-2"></i>
-                                        </a>
-                                        <a href="blog.html" class="btn btn-outline-primary">
-                                            View All Posts
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="d-flex justify-content-center flex-wrap gap-3">
+                        <span class="badge bg-dark text-gold border border-gold px-3 py-2">Nature</span>
+                        <span class="badge bg-dark text-gold border border-gold px-3 py-2">Portraits</span>
+                        <span class="badge bg-dark text-gold border border-gold px-3 py-2">Urban</span>
+                        <span class="badge bg-dark text-gold border border-gold px-3 py-2">Travel</span>
+                        <span class="badge bg-dark text-gold border border-gold px-3 py-2">Emotions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" id="photoCount">3</div>
+                        <div class="stat-label">Photos</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" id="viewCount">0</div>
+                        <div class="stat-label">Views</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">2022-24</div>
+                        <div class="stat-label">Timeline</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Recent Blog Posts -->
-    <section class="section-padding">
+    <!-- Gallery Grid -->
+    <section class="gallery-container">
         <div class="container">
-            <div class="section-title">
-                <h2>Recent Thoughts</h2>
-                <p>More writings and reflections from my journey</p>
-            </div>
-            
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 1">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> Jan 15, 2024</span>
-                                <span><i class="far fa-folder"></i> Thoughts</span>
+                <!-- Photo 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 fade-in" style="animation-delay: 0.1s;">
+                    <div class="photo-card">
+                        <img src="https://raw.githubusercontent.com/riddhi35/riddhi35.github.io/main/images/IMG_20221220_143705.jpg" 
+                             alt="Winter Morning" class="photo-image" data-id="1">
+                        <div class="photo-overlay">
+                            <h4 class="photo-title">Winter Morning</h4>
+                            <div class="photo-meta">
+                                <span><i class="far fa-calendar"></i> Dec 20, 2022</span>
+                                <span><i class="fas fa-tag"></i> Nature</span>
                             </div>
-                            <h4>The Art of Mindful Living</h4>
-                            <p>Exploring how mindfulness transforms our daily experiences and creative output.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
                         </div>
+                        <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-photo-id="1">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </a>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 2">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> Jan 10, 2024</span>
-                                <span><i class="far fa-folder"></i> Politics</span>
+
+                <!-- Photo 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 fade-in" style="animation-delay: 0.2s;">
+                    <div class="photo-card">
+                        <img src="https://raw.githubusercontent.com/riddhi35/riddhi35.github.io/main/images/IMG_20230117_094911.jpg" 
+                             alt="Golden Hour" class="photo-image" data-id="2">
+                        <div class="photo-overlay">
+                            <h4 class="photo-title">Golden Hour</h4>
+                            <div class="photo-meta">
+                                <span><i class="far fa-calendar"></i> Jan 17, 2023</span>
+                                <span><i class="fas fa-tag"></i> Urban</span>
                             </div>
-                            <h4>Modern Political Discourse</h4>
-                            <p>Analyzing the evolution of political conversations in the digital age.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
                         </div>
+                        <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-photo-id="2">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </a>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="https://images.unsplash.com/photo-1520869562399-e772f042d192?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 3">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> Jan 5, 2024</span>
-                                <span><i class="far fa-folder"></i> Photography</span>
+
+                <!-- Photo 3 -->
+                <div class="col-lg-4 col-md-6 mb-4 fade-in" style="animation-delay: 0.3s;">
+                    <div class="photo-card">
+                        <img src="https://raw.githubusercontent.com/riddhi35/riddhi35.github.io/main/images/IMG_20231221_223047.jpg" 
+                             alt="City Nights" class="photo-image" data-id="3">
+                        <div class="photo-overlay">
+                            <h4 class="photo-title">City Nights</h4>
+                            <div class="photo-meta">
+                                <span><i class="far fa-calendar"></i> Dec 21, 2023</span>
+                                <span><i class="fas fa-tag"></i> Urban</span>
                             </div>
-                            <h4>Finding Stories in Frames</h4>
-                            <p>How photography became my medium for storytelling and emotional expression.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
                         </div>
+                        <a href="#" class="view-btn" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-photo-id="3">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </a>
                     </div>
                 </div>
+            </div>
+
+            <!-- Loading Indicator for More Photos -->
+            <div id="loadingIndicator" class="text-center mt-5" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p class="text-muted mt-3">Loading more photos...</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations, discussions, or just to say hello</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h5>Location</h5>
-                        <p>Based in India</p>
-                    </div>
+    <!-- Lightbox Modal -->
+    <div class="modal fade lightbox-modal" id="lightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lightboxTitle">Photo Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h5>Email</h5>
-                        <p>contact@riddhighorui.com</p>
+                <div class="modal-body">
+                    <!-- Navigation Arrows -->
+                    <div class="lightbox-nav nav-prev" id="prevPhoto">
+                        <i class="fas fa-chevron-left"></i>
                     </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h5>Phone</h5>
-                        <p>Available upon request</p>
+                    <div class="lightbox-nav nav-next" id="nextPhoto">
+                        <i class="fas fa-chevron-right"></i>
                     </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto">
-                    <form id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <input type="text" class="form-control" placeholder="Subject" required>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <div class="col-12 mt-3 text-center">
-                                <button type="submit" class="btn btn-primary">Send Message</button>
-                            </div>
+                    
+                    <!-- Photo Container -->
+                    <div class="photo-container" style="min-height: 500px; display: flex; align-items: center; justify-content: center;">
+                        <img id="lightboxImage" src="" alt="" class="lightbox-img">
+                    </div>
+                    
+                    <!-- Photo Info -->
+                    <div class="lightbox-info">
+                        <h4 id="lightboxPhotoTitle" class="lightbox-title">Photo Title</h4>
+                        <div id="lightboxDetails" class="lightbox-details">
+                            <span id="lightboxDate"><i class="far fa-calendar me-2"></i>Date</span>
+                            <span id="lightboxCategory" class="ms-4"><i class="fas fa-tag me-2"></i>Category</span>
+                            <span id="lightboxSize" class="ms-4"><i class="fas fa-expand me-2"></i>Size</span>
                         </div>
-                    </form>
+                        
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <a href="#" class="action-btn download-btn" id="downloadBtn" download>
+                                <i class="fas fa-download"></i> Download HD
+                            </a>
+                            <button class="action-btn share-btn" id="shareBtn">
+                                <i class="fas fa-share-alt"></i> Share
+                            </button>
+                            <button class="action-btn share-btn" id="copyLinkBtn">
+                                <i class="fas fa-link"></i> Copy Link
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-links">
-                        <h5>Riddhi Ghorui</h5>
-                        <p>A creative portfolio showcasing thoughts, photography, vlogs, and political commentary.</p>
-                        <div class="social-icons mt-4">
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                            <a href="https://github.com/riddhi35" class="social-icon"><i class="fab fa-github"></i></a>
-                        </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-brand">RIDDHI</div>
+                    <p style="color: var(--text-gray); max-width: 300px;">
+                        Capturing life's moments through photography, sharing stories through images, and creating visual memories.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://github.com/riddhi35" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 style="color: var(--accent-silver); margin-bottom: 20px;">Quick Links</h5>
                     <div class="footer-links">
-                        <h5>Quick Links</h5>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
+                        <a href="index.html">Home</a>
+                        <a href="index.html#portfolio">Portfolio</a>
+                        <a href="photography.html">Photography</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="index.html#contact">Contact</a>
                     </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-4 mb-5 mb-md-0">
+                    <h5 style="color: var(--accent-silver); margin-bottom: 20px;">Categories</h5>
                     <div class="footer-links">
-                        <h5>Categories</h5>
-                        <ul>
-                            <li><a href="blog.html">Thoughts & Writing</a></li>
-                            <li><a href="#portfolio" data-filter=".photography">Photography</a></li>
-                            <li><a href="#portfolio" data-filter=".vlogs">Daily Vlogs</a></li>
-                            <li><a href="#portfolio" data-filter=".politics">Political Views</a></li>
-                            <li><a href="blog.html">Personal Journal</a></li>
-                        </ul>
+                        <a href="#" data-category="nature">Nature Photography</a>
+                        <a href="#" data-category="urban">Urban & City</a>
+                        <a href="#" data-category="portraits">Portraits</a>
+                        <a href="#" data-category="travel">Travel Diary</a>
                     </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-links">
-                        <h5>Visit</h5>
-                        <p>riddhi35.github.io</p>
-                        <p>Updated regularly with new content</p>
-                        <p style="font-size: 0.9rem; color: #b0b0b0; margin-top: 10px;">
-                            Latest: <a href="blogs/first-january-2026.html" style="color: #b0b0b0;">First Day of 2026</a>
-                        </p>
-                    </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 style="color: var(--accent-silver); margin-bottom: 20px;">Visit</h5>
+                    <p style="color: var(--text-gray);">
+                        <i class="fas fa-globe me-2"></i> riddhi35.github.io<br>
+                        <i class="fas fa-camera me-2 mt-2"></i> Updated regularly
+                    </p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Riddhi Ghorui. All Rights Reserved. | Designed with Bootstrap</p>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Riddhi Ghorui. All photographs are original works.</p>
+                <p style="font-size: 0.8rem; opacity: 0.7;">Click photos to view in full resolution • Download available for personal use</p>
             </div>
         </div>
     </footer>
@@ -992,88 +765,227 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Portfolio Filter
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                const filterValue = this.getAttribute('data-filter');
-                const portfolioItems = document.querySelectorAll('.portfolio-item');
-                
-                portfolioItems.forEach(item => {
-                    if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
+        // Photo Data
+        const photos = [
+            {
+                id: 1,
+                title: "Winter Morning",
+                url: "https://raw.githubusercontent.com/riddhi35/riddhi35.github.io/main/images/IMG_20221220_143705.jpg",
+                date: "December 20, 2022",
+                category: "Nature",
+                size: "4032×3024 • 3.2MB",
+                description: "A serene winter morning captured in natural light."
+            },
+            {
+                id: 2,
+                title: "Golden Hour",
+                url: "https://raw.githubusercontent.com/riddhi35/riddhi35.github.io/main/images/IMG_20230117_094911.jpg",
+                date: "January 17, 2023",
+                category: "Urban",
+                size: "4032×3024 • 3.5MB",
+                description: "The magical golden hour lighting on urban structures."
+            },
+            {
+                id: 3,
+                title: "City Nights",
+                url: "https://raw.githubusercontent.com/riddhi35/riddhi35.github.io/main/images/IMG_20231221_223047.jpg",
+                date: "December 21, 2023",
+                category: "Urban",
+                size: "4032×3024 • 3.8MB",
+                description: "Cityscape illuminated by evening lights and reflections."
+            }
+        ];
+
+        let currentPhotoIndex = 0;
+        let viewCount = 0;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Initialize view count from localStorage
+            viewCount = parseInt(localStorage.getItem('galleryViews')) || 0;
+            document.getElementById('viewCount').textContent = viewCount;
+            
+            // Setup lightbox
+            setupLightbox();
+            
+            // Setup photo click events
+            setupPhotoClicks();
+            
+            // Setup navigation
+            setupNavigation();
+            
+            // Setup action buttons
+            setupActionButtons();
+            
+            // Increment view count
+            incrementViewCount();
+        });
+
+        // Setup Lightbox
+        function setupLightbox() {
+            const lightboxModal = document.getElementById('lightboxModal');
+            
+            lightboxModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const photoId = parseInt(button.getAttribute('data-photo-id'));
+                currentPhotoIndex = photos.findIndex(p => p.id === photoId);
+                updateLightbox();
+            });
+        }
+
+        // Update Lightbox Content
+        function updateLightbox() {
+            const photo = photos[currentPhotoIndex];
+            
+            document.getElementById('lightboxTitle').textContent = photo.title;
+            document.getElementById('lightboxPhotoTitle').textContent = photo.title;
+            document.getElementById('lightboxImage').src = photo.url;
+            document.getElementById('lightboxImage').alt = photo.title;
+            document.getElementById('lightboxDate').innerHTML = `<i class="far fa-calendar me-2"></i>${photo.date}`;
+            document.getElementById('lightboxCategory').innerHTML = `<i class="fas fa-tag me-2"></i>${photo.category}`;
+            document.getElementById('lightboxSize').innerHTML = `<i class="fas fa-expand me-2"></i>${photo.size}`;
+            
+            // Update download link
+            document.getElementById('downloadBtn').href = photo.url;
+            document.getElementById('downloadBtn').download = `riddhi-photo-${photo.id}.jpg`;
+        }
+
+        // Setup Photo Clicks
+        function setupPhotoClicks() {
+            document.querySelectorAll('.photo-image').forEach(img => {
+                img.addEventListener('click', function() {
+                    const photoId = parseInt(this.getAttribute('data-id'));
+                    const button = document.querySelector(`[data-photo-id="${photoId}"]`);
+                    if (button) {
+                        button.click();
                     }
                 });
             });
-        });
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.padding = '10px 0';
-                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.padding = '20px 0';
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update active nav link
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
+        }
+
+        // Setup Navigation
+        function setupNavigation() {
+            document.getElementById('prevPhoto').addEventListener('click', function() {
+                currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+                updateLightbox();
+            });
+            
+            document.getElementById('nextPhoto').addEventListener('click', function() {
+                currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+                updateLightbox();
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                const lightbox = document.getElementById('lightboxModal');
+                if (lightbox.classList.contains('show')) {
+                    if (e.key === 'ArrowLeft') {
+                        document.getElementById('prevPhoto').click();
+                    } else if (e.key === 'ArrowRight') {
+                        document.getElementById('nextPhoto').click();
+                    } else if (e.key === 'Escape') {
+                        const modal = bootstrap.Modal.getInstance(lightbox);
+                        modal.hide();
+                    }
                 }
             });
-        });
-        
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-        
-        // Update year in footer
-        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Riddhi Ghorui. All Rights Reserved. | Designed with Bootstrap`;
-        
-        // Filter links in footer
-        document.querySelectorAll('.footer-links a[data-filter]').forEach(link => {
+        }
+
+        // Setup Action Buttons
+        function setupActionButtons() {
+            // Share Button
+            document.getElementById('shareBtn').addEventListener('click', async function() {
+                const photo = photos[currentPhotoIndex];
+                const shareData = {
+                    title: `Check out this photo by Riddhi: ${photo.title}`,
+                    text: photo.description,
+                    url: window.location.href + '#photo-' + photo.id
+                };
+                
+                if (navigator.share) {
+                    try {
+                        await navigator.share(shareData);
+                    } catch (err) {
+                        console.log('Error sharing:', err);
+                    }
+                } else {
+                    // Fallback: Copy to clipboard
+                    copyToClipboard(shareData.url);
+                    alert('Link copied to clipboard!');
+                }
+            });
+            
+            // Copy Link Button
+            document.getElementById('copyLinkBtn').addEventListener('click', function() {
+                const photo = photos[currentPhotoIndex];
+                const url = window.location.href + '#photo-' + photo.id;
+                copyToClipboard(url);
+                
+                // Show feedback
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        // Helper Functions
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                console.log('Copied to clipboard:', text);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        function incrementViewCount() {
+            viewCount++;
+            localStorage.setItem('galleryViews', viewCount);
+            document.getElementById('viewCount').textContent = viewCount;
+        }
+
+        // Filter by category
+        document.querySelectorAll('[data-category]').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                const filter = this.getAttribute('data-filter');
-                document.querySelector(`.filter-btn[data-filter="${filter}"]`).click();
-                window.scrollTo({
-                    top: document.querySelector('#portfolio').offsetTop - 70,
-                    behavior: 'smooth'
-                });
+                const category = this.getAttribute('data-category');
+                filterPhotos(category);
             });
         });
+
+        function filterPhotos(category) {
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                const cardCategory = card.querySelector('.photo-meta span:nth-child(2)').textContent.toLowerCase();
+                if (category === 'all' || cardCategory.includes(category.toLowerCase())) {
+                    card.parentElement.style.display = 'block';
+                } else {
+                    card.parentElement.style.display = 'none';
+                }
+            });
+            
+            // Update active filter
+            document.querySelectorAll('.badge').forEach(badge => {
+                badge.classList.remove('bg-gold', 'text-dark');
+                badge.classList.add('bg-dark', 'text-gold');
+            });
+            
+            // Highlight active filter
+            const activeBadge = Array.from(document.querySelectorAll('.badge')).find(badge => 
+                badge.textContent.toLowerCase() === category.toLowerCase()
+            );
+            if (activeBadge) {
+                activeBadge.classList.remove('bg-dark', 'text-gold');
+                activeBadge.classList.add('bg-gold', 'text-dark');
+            }
+        }
+
+        // Simulate loading more photos
+        document.getElementById('loadingIndicator').style.display = 'none';
     </script>
 </body>
 </html>
