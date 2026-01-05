@@ -3,585 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riddhi Ghorui | Personal Portfolio</title>
+    <title>Riddhi Ghorui | Java Backend Developer</title>
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Java Backend Developer with 3.5+ years experience in Spring Boot, Microservices, AWS, and scalable applications.">
+    <meta name="keywords" content="Java Developer, Spring Boot, Microservices, AWS, Backend Developer, REST APIs">
+    <meta name="author" content="Riddhi Ghorui">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --primary-color: #6c63ff;
-            --secondary-color: #4a44c6;
-            --dark-color: #2a2a2a;
-            --light-color: #f8f9fa;
-            --gray-color: #6c757d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 600;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 30px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 30px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--dark-color);
-        }
-        
-        .section-title p {
-            color: var(--gray-color);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Navbar Styles */
-        .navbar {
-            padding: 20px 0;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-        
-        .navbar-nav .nav-link {
-            color: var(--dark-color);
-            font-weight: 500;
-            margin: 0 10px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: white;
-            background-color: var(--primary-color);
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            padding: 180px 0 100px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--gray-color);
-            margin-bottom: 30px;
-        }
-        
-        .hero-image {
-            position: relative;
-            text-align: center;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Latest Post in Hero */
-        .latest-post {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s ease;
-        }
-        
-        .latest-post:hover {
-            transform: translateY(-5px);
-        }
-        
-        .latest-post h5 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .latest-post h5 i {
-            font-size: 1.2em;
-        }
-        
-        /* About Section */
-        .about-img {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-content h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .about-content p {
-            color: var(--gray-color);
-            margin-bottom: 20px;
-        }
-        
-        .skill-item {
-            margin-bottom: 25px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background-color: #e9ecef;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-per {
-            height: 100%;
-            background-color: var(--primary-color);
-            border-radius: 4px;
-        }
-        
-        /* Portfolio Section */
-        .portfolio-filter {
-            margin-bottom: 40px;
-        }
-        
-        .filter-btn {
-            background: none;
-            border: none;
-            padding: 8px 20px;
-            margin: 0 5px;
-            color: var(--gray-color);
-            font-weight: 500;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn.active,
-        .filter-btn:hover {
-            color: white;
-            background-color: var(--primary-color);
-        }
-        
-        .portfolio-item {
-            margin-bottom: 30px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .portfolio-img {
-            position: relative;
-            overflow: hidden;
-            height: 250px;
-        }
-        
-        .portfolio-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(108, 99, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-info {
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-        
-        /* Featured Blog Section */
-        .featured-blog-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .featured-blog-section .section-title h2,
-        .featured-blog-section .section-title p {
-            color: white;
-        }
-        
-        .blog-featured-card {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .blog-featured-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .blog-badge {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        
-        /* Blog Section */
-        .blog-item {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            background: white;
-        }
-        
-        .blog-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .blog-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .blog-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .blog-item:hover .blog-img img {
-            transform: scale(1.1);
-        }
-        
-        .blog-content {
-            padding: 25px;
-        }
-        
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            color: var(--gray-color);
-            font-size: 0.9rem;
-        }
-        
-        .blog-meta span {
-            margin-right: 15px;
-        }
-        
-        .blog-content h4 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-        
-        .contact-info-item {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-info-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(108, 99, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-        
-        .form-control {
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-links h5 {
-            margin-bottom: 20px;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links ul li a {
-            color: #b0b0b0;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links ul li a:hover {
-            color: white;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            margin-top: 40px;
-            text-align: center;
-            color: #b0b0b0;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .hero-section {
-                padding: 150px 0 80px;
-                text-align: center;
-            }
-            
-            .portfolio-img {
-                height: 200px;
-            }
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">RIDDHI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="photography.html">Photography</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+            <a href="index.html" class="logo">
+                <span class="logo-text">RIDDHI</span>
+                <span class="logo-dot">.</span>
+            </a>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
             </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="#contact" class="btn-contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section class="hero">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1>Hi, I'm <span style="color: var(--primary-color);">Riddhi Ghorui</span></h1>
-                        <p>A creative thinker, writer, photographer, and content creator passionate about sharing perspectives through multiple mediums.</p>
-                        <div class="mt-4">
-                            <a href="#portfolio" class="btn btn-primary me-3">View My Work</a>
-                            <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
-                        </div>
-                        
-                        <!-- Latest Post Section -->
-                        <div class="latest-post">
-                            <h5><i class="fas fa-feather-alt"></i> Latest Blog Post</h5>
-                            <h4>First Day of 2026: Cubbon Park Reflections</h4>
-                            <p class="text-muted mb-3">A quiet morning walk in Bangalore with friends, reflecting on memories and new beginnings. Published on January 1, 2026.</p>
-                            <a href="blogs/first-january-2026.html" class="btn btn-primary btn-sm">
-                                Read Full Post <i class="fas fa-arrow-right ms-2"></i>
-                            </a>
-                        </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h4 class="hero-subtitle">Hello, I'm</h4>
+                    <h1 class="hero-title">Riddhi Ghorui</h1>
+                    <h2 class="hero-role">Java Backend Developer</h2>
+                    <p class="hero-description">
+                        Building scalable, high-performance applications with <span class="highlight">Java</span>, 
+                        <span class="highlight">Spring Boot</span>, and <span class="highlight">Microservices</span>. 
+                        3.5+ years of experience delivering enterprise solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        <a href="resume.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i> Resume
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="mailto:way2riddhi@gmail.com" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+918167763857" class="social-icon" title="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="https://github.com/riddhi35" class="social-icon" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/riddhi-ghorui" class="social-icon" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://riddhi35.github.io" class="social-icon" target="_blank" title="Portfolio">
+                            <i class="fas fa-globe"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-image">
-                        <img src="https://i.postimg.cc/BQpCS9Hz/RG-photo.jpg" alt="Riddhi Ghorui">
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <img src="images/IMG_20230216_150120.jpg" alt="Riddhi Ghorui" class="profile-img">
+                        <div class="profile-badge">
+                            <span class="badge-text">3.5+ Years Experience</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -589,65 +97,461 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section-padding">
+    <section id="about" class="section about">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Get to know more about my journey, skills, and what drives my creative process</p>
-            </div>
-            
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-img">
-                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="About Me">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Backend Developer with <strong>3.5 years of experience</strong> in designing and developing 
+                        scalable, high-performance applications using Java, Spring Boot, and Microservices.
+                    </p>
+                    <p>
+                        Skilled in REST APIs, Spring Security (JWT, RBAC), third-party API integration, 
+                        and database optimization. Hands-on with Docker, Jenkins CI/CD, and AWS (EC2, S3, RDS).
+                    </p>
+                    <p>
+                        Experienced in Agile/Scrum with JIRA, collaborating with cross-functional teams 
+                        to deliver secure, robust, and enterprise-grade solutions. Passionate about 
+                        clean code, automation, and continuous learning.
+                    </p>
+                    
+                    <div class="personal-info">
+                        <h4>Personal Interests</h4>
+                        <p>
+                            <strong>Sports Enthusiast:</strong> Captain of ECE Volleyball Team in inter-college tournaments<br>
+                            <strong>Writing:</strong> Passionate blogger sharing thoughts on technology and life<br>
+                            <strong>Reading & Cooking:</strong> Love reading books and experimenting with recipes<br>
+                            <strong>Web Series:</strong> Avid watcher of quality web series and documentaries
+                        </p>
+                    </div>
+                    
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">Bangalore, India</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Origin:</span>
+                            <span class="info-value">Hardcore Bengali from Kolkata</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <a href="mailto:way2riddhi@gmail.com" class="info-value">way2riddhi@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone:</span>
+                            <a href="tel:+918167763857" class="info-value">+91 8167763857</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Languages:</span>
+                            <span class="info-value">Bengali, English, Hindi</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status:</span>
+                            <span class="info-value available">Open to Opportunities</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3>Creative Mind & Passionate Soul</h3>
-                        <p>I'm a multi-faceted creator who expresses through writing, photography, vlogging, and thoughtful commentary. My work reflects my journey of self-discovery and my perspective on the world around me.</p>
-                        <p>I believe in authentic storytelling and creating content that resonates, challenges, and inspires.</p>
-                        
-                        <div class="skills mt-4">
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Writing & Content Creation</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-per" style="width: 95%;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Photography</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-per" style="width: 90%;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Video Production</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-per" style="width: 85%;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Political Analysis</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-per" style="width: 80%;"></div>
-                                </div>
-                            </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">3.5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <!-- Backend Skills -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <i class="fas fa-server"></i> Java & Backend Development
+                </h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">Java & Spring Boot</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Microservices & REST APIs</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Spring Security & JWT</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">MySQL & Database Design</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cloud & DevOps -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <i class="fas fa-cloud"></i> Cloud & DevOps
+                </h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">AWS (EC2, S3, RDS)</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Docker & Containerization</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">CI/CD with Jenkins</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git & Version Control</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI/ML & Frontend -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">
+                    <i class="fas fa-brain"></i> AI/ML & Frontend
+                </h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">Python & Machine Learning</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">LLM & Neural Networks</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Angular & TypeScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML5, CSS3, JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Tags -->
+            <div class="skills-tags">
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">Hibernate</span>
+                <span class="skill-tag">Kafka</span>
+                <span class="skill-tag">Redis</span>
+                <span class="skill-tag">Elasticsearch</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Jenkins</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Microservices</span>
+                <span class="skill-tag">JUnit</span>
+                <span class="skill-tag">Mockito</span>
+                <span class="skill-tag">Agile/Scrum</span>
+                <span class="skill-tag">JIRA</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">LLM</span>
+                <span class="skill-tag">RNN</span>
+                <span class="skill-tag">Keras</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Angular</span>
+                <span class="skill-tag">TypeScript</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                
+                <!-- Current Job -->
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Java Developer</h3>
+                        <h4 class="timeline-company">Brainworks Business Solution</h4>
+                        <p class="timeline-description">
+                            Currently contributing to scalable backend solutions using Java and Spring ecosystem.
+                        </p>
+                        <ul class="timeline-list">
+                            <li>Developing microservices architecture for enterprise applications</li>
+                            <li>Implementing CI/CD pipelines for automated deployment</li>
+                            <li>Optimizing database performance and query efficiency</li>
+                            <li>Collaborating with cross-functional teams using Agile methodology</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experion Technologies -->
+                <div class="timeline-item">
+                    <div class="timeline-date">July 2022 - August 2025</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Java Backend Developer</h3>
+                        <h4 class="timeline-company">Experion Technologies</h4>
+                        <ul class="timeline-list">
+                            <li>Developed scalable microservices using Spring Boot and Spring Cloud</li>
+                            <li>Implemented JWT-based authentication and RBAC for secure applications</li>
+                            <li>Built RESTful APIs with comprehensive documentation using Swagger</li>
+                            <li>Optimized database queries and implemented caching strategies</li>
+                            <li>Containerized applications using Docker and deployed on AWS</li>
+                            <li>Implemented CI/CD pipelines using Jenkins for automated deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1: PERFORM+ -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="project-title">PERFORM+ Contracts</h3>
+                        <span class="project-category">Healthcare Platform</span>
+                    </div>
+                    <p class="project-description">
+                        Value-Based Care contract management platform for U.S. healthcare payers and providers,
+                        automating contract workflows and analyzing performance metrics.
+                    </p>
+                    <div class="project-tech">
+                        <span>Spring Boot</span>
+                        <span>Kafka</span>
+                        <span>SQL Server</span>
+                        <span>JWT</span>
+                        <span>Angular</span>
+                    </div>
+                    <div class="project-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-chart-line"></i>
+                            <span>30% faster contract rollout</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>HIPAA compliant security</span>
+                        </div>
+                    </div>
+                    <div class="project-responsibilities">
+                        <h4>Key Contributions:</h4>
+                        <ul>
+                            <li>Developed VBC contract creation and approval workflows</li>
+                            <li>Built performance scorecard APIs with drill-down analytics</li>
+                            <li>Implemented JWT and RBAC for healthcare data compliance</li>
+                            <li>Integrated Kafka for real-time performance updates</li>
+                        </ul>
+                    </div>
+                    <a href="projects.html#perfom" class="project-link">View Case Study →</a>
+                </div>
+                
+                <!-- Project 2: Hotels.com -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3 class="project-title">Hotels.com Platform</h3>
+                        <span class="project-category">Travel & Booking</span>
+                    </div>
+                    <p class="project-description">
+                        Microservices-based hotel booking platform supporting real-time reservations, 
+                        payments, room availability, and notification services.
+                    </p>
+                    <div class="project-tech">
+                        <span>Microservices</span>
+                        <span>Redis</span>
+                        <span>Elasticsearch</span>
+                        <span>AWS EKS</span>
+                        <span>Stripe</span>
+                    </div>
+                    <div class="project-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-bolt"></i>
+                            <span>22% boost in conversions</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>High scalability</span>
+                        </div>
+                    </div>
+                    <div class="project-responsibilities">
+                        <h4>Key Contributions:</h4>
+                        <ul>
+                            <li>Implemented User & Auth Service with JWT authentication</li>
+                            <li>Developed Hotel Inventory Services with Redis caching</li>
+                            <li>Engineered Booking Service with Kafka event publishing</li>
+                            <li>Integrated Stripe Payment Gateway for secure transactions</li>
+                            <li>Built Elasticsearch Search Service with multi-criteria filters</li>
+                        </ul>
+                    </div>
+                    <a href="projects.html#hotels" class="project-link">View Case Study →</a>
+                </div>
+                
+                <!-- Project 3: Stock Market Prediction -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="project-title">Stock Market Prediction using LLM</h3>
+                        <span class="project-category">AI/ML Project</span>
+                    </div>
+                    <p class="project-description">
+                        Machine learning project predicting future stock prices using Large Language Models (LLMs)
+                        and Recurrent Neural Networks (RNN) for analyzing market trends and patterns.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>LLM</span>
+                        <span>RNN</span>
+                        <span>Keras</span>
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="project-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-university"></i>
+                            <span>University Level Project</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-brain"></i>
+                            <span>AI-powered predictions</span>
+                        </div>
+                    </div>
+                    <div class="project-responsibilities">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Historical stock data analysis and pattern recognition</li>
+                            <li>Sentiment analysis using Large Language Models</li>
+                            <li>Recurrent Neural Networks for time-series prediction</li>
+                            <li>Real-time stock price forecasting with Keras</li>
+                            <li>Risk assessment and investment insights generation</li>
+                        </ul>
+                    </div>
+                    <a href="projects.html#stock" class="project-link">View Details →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                
+                <!-- Bachelor's Degree -->
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3 class="education-degree">Bachelor of Technology (B.Tech)</h3>
+                        <span class="education-year">2020 - 2024</span>
+                    </div>
+                    <h4 class="education-institution">Maulana Abul Kalam Azad University of Technology</h4>
+                    <p class="education-field">Electronics and Communication Engineering</p>
+                    <div class="education-details">
+                        <div class="education-info">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">Kolkata, West Bengal</span>
+                        </div>
+                        <div class="education-info">
+                            <span class="info-label">CGPA:</span>
+                            <span class="info-value">8.72 / 10.0</span>
+                        </div>
+                        <div class="education-info">
+                            <span class="info-label">Relevant Courses:</span>
+                            <span class="info-value">Data Structures, Algorithms, DBMS, Web Technologies, AI/ML</span>
+                        </div>
+                    </div>
+                    <div class="education-achievements">
+                        <h4>Achievements & Activities:</h4>
+                        <ul>
+                            <li>Captain of ECE Department Volleyball Team</li>
+                            <li>Represented university in inter-college volleyball tournaments</li>
+                            <li>Active participant in technical workshops and seminars</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Certifications -->
+            <div class="certifications">
+                <h3 class="certifications-title">Certifications & Courses</h3>
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h4>AWS Certified Developer - Associate</h4>
+                            <p>Amazon Web Services • 2023</p>
+                        </div>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h4>Spring & Spring Boot Professional</h4>
+                            <p>Udemy • 2022</p>
+                        </div>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h4>Machine Learning Specialization</h4>
+                            <p>Coursera • 2023</p>
                         </div>
                     </div>
                 </div>
@@ -655,275 +559,108 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section-padding" style="background-color: #f8f9fa;">
+    <!-- CTA Section -->
+    <section class="cta">
         <div class="container">
-            <div class="section-title">
-                <h2>My Portfolio</h2>
-                <p>A collection of my work across different creative domains</p>
-            </div>
-            
-            <div class="portfolio-filter text-center">
-                <button class="filter-btn active" data-filter="*">All</button>
-                <button class="filter-btn" data-filter=".writing">Writing</button>
-                <button class="filter-btn" data-filter=".photography">Photography</button>
-                <button class="filter-btn" data-filter=".vlogs">Vlogs</button>
-                <button class="filter-btn" data-filter=".politics">Politics</button>
-            </div>
-            
-            <div class="row portfolio-grid">
-                <!-- Featured Blog in Portfolio -->
-                <div class="col-lg-4 col-md-6 portfolio-item writing">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1580229085925-603a605c431d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="January 1st Blog">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>First Day of 2026</h4>
-                                <p>Personal reflections from Cubbon Park</p>
-                                <a href="blogs/first-january-2026.html" class="btn btn-sm btn-light mt-2">Read Blog</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photography Portfolio Item -->
-                <div class="col-lg-4 col-md-6 portfolio-item photography">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photography Portfolio">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Nature Photography</h4>
-                                <p>Capturing beauty in natural landscapes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Vlogs Portfolio Item -->
-                <div class="col-lg-4 col-md-6 portfolio-item vlogs">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/phone-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vlogs Portfolio">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Daily Life Vlogs</h4>
-                                <p>Documenting everyday moments and experiences</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Politics Portfolio Item -->
-                <div class="col-lg-4 col-md-6 portfolio-item politics">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Politics Portfolio">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Political Commentary</h4>
-                                <p>Analysis and perspectives on current affairs</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Writing Portfolio Item 2 -->
-                <div class="col-lg-4 col-md-6 portfolio-item writing">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Writing Portfolio 2">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Creative Writing</h4>
-                                <p>Short stories and fictional narratives</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Photography Portfolio Item 2 -->
-                <div class="col-lg-4 col-md-6 portfolio-item photography">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photography Portfolio 2">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Portrait Photography</h4>
-                                <p>Capturing human emotions and expressions</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Blog Section -->
-    <section id="blog" class="section-padding featured-blog-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Blog Post</h2>
-                <p>My latest reflection on life, memories, and new beginnings</p>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="blog-featured-card bg-white">
-                        <div class="row g-0">
-                            <div class="col-md-6">
-                                <img src="https://images.unsplash.com/photo-1580229085925-603a605c431d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                                     class="img-fluid h-100" alt="Cubbon Park Reflection" style="object-fit: cover;">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="p-4 p-md-5 d-flex flex-column h-100">
-                                    <span class="blog-badge mb-3">Latest Post</span>
-                                    <h3 class="mb-4" style="color: var(--dark-color);">First Day of 2026: Cubbon Park Reflections</h3>
-                                    <div class="mb-4" style="color: var(--gray-color);">
-                                        <span class="me-3"><i class="far fa-calendar me-1"></i> January 1, 2026</span>
-                                        <span><i class="far fa-clock me-1"></i> 3 min read</span>
-                                    </div>
-                                    <p style="color: var(--gray-color); line-height: 1.8; flex-grow: 1;">
-                                        "Almost eleven months since I left home, and today Bangalore felt a little less unfamiliar. 
-                                        The city woke up slowly, like someone stretching after a long sleep. We were four—Nilabha, 
-                                        Jyotirmoy, Apurba, and me—walking towards Cubbon Park, carrying nothing heavy except memories 
-                                        that don't ask permission before sitting beside you..."
-                                    </p>
-                                    <div class="mt-4">
-                                        <a href="blogs/first-january-2026.html" class="btn btn-primary me-3">
-                                            Read Full Post <i class="fas fa-arrow-right ms-2"></i>
-                                        </a>
-                                        <a href="blog.html" class="btn btn-outline-primary">
-                                            View All Posts
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recent Blog Posts -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Recent Thoughts</h2>
-                <p>More writings and reflections from my journey</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 1">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> Jan 15, 2024</span>
-                                <span><i class="far fa-folder"></i> Thoughts</span>
-                            </div>
-                            <h4>The Art of Mindful Living</h4>
-                            <p>Exploring how mindfulness transforms our daily experiences and creative output.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 2">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> Jan 10, 2024</span>
-                                <span><i class="far fa-folder"></i> Politics</span>
-                            </div>
-                            <h4>Modern Political Discourse</h4>
-                            <p>Analyzing the evolution of political conversations in the digital age.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="https://images.unsplash.com/photo-1520869562399-e772f042d192?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blog 3">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> Jan 5, 2024</span>
-                                <span><i class="far fa-folder"></i> Photography</span>
-                            </div>
-                            <h4>Finding Stories in Frames</h4>
-                            <p>How photography became my medium for storytelling and emotional expression.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="cta-title">Let's Build Something Amazing</h2>
+            <p class="cta-description">
+                Looking for a skilled Java developer for your next project? 
+                Let's connect and discuss how I can contribute to your team.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:way2riddhi@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="tel:+918167763857" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> Call Me
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-comment"></i> Send Message
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding contact-section">
+    <section id="contact" class="section contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations, discussions, or just to say hello</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h5>Location</h5>
-                        <p>Based in India</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-subtitle">Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
                             <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:way2riddhi@gmail.com">way2riddhi@gmail.com</a>
+                            </div>
                         </div>
-                        <h5>Email</h5>
-                        <p>contact@riddhighorui.com</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
+                        <div class="contact-item">
                             <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+918167763857">+91 8167763857</a>
+                            </div>
                         </div>
-                        <h5>Phone</h5>
-                        <p>Available upon request</p>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Current Location</h4>
+                                <p>Bangalore, Karnataka</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <h4>Hometown</h4>
+                                <p>Kolkata, West Bengal</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Availability</h4>
+                                <p>Open to new opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Connect with me</h4>
+                        <div class="social-icons">
+                            <a href="https://github.com/riddhi35" target="_blank" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/riddhi-ghorui" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://twitter.com/your-twitter" target="_blank" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://riddhi35.github.io" target="_blank" title="Portfolio">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto">
+                <div class="contact-form">
+                    <h3 class="contact-subtitle">Send me a message</h3>
                     <form id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <input type="text" class="form-control" placeholder="Subject" required>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <div class="col-12 mt-3 text-center">
-                                <button type="submit" class="btn btn-primary">Send Message</button>
-                            </div>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -931,151 +668,123 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-links">
-                        <h5>Riddhi Ghorui</h5>
-                        <p>A creative portfolio showcasing thoughts, photography, vlogs, and political commentary.</p>
-                        <div class="social-icons mt-4">
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                            <a href="https://github.com/riddhi35" class="social-icon"><i class="fab fa-github"></i></a>
-                        </div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">RIDDHI<span>.</span></a>
+                    <p class="footer-description">
+                        Java Backend Developer specializing in Spring Boot, Microservices, and scalable applications.
+                        Sports enthusiast, writer, and hardcore Bengali from Kolkata.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="photography.html">Photography</a></li>
+                        <li><a href="resume.pdf" download>Download Resume</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> way2riddhi@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 8167763857</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
                     </div>
                 </div>
-                
-                <div class="col-lg-2 col-md-6">
-                    <div class="footer-links">
-                        <h5>Quick Links</h5>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
+                <div class="footer-section">
+                    <h3 class="footer-title">Languages</h3>
+                    <div class="languages">
+                        <span class="language-tag">Bengali</span>
+                        <span class="language-tag">English</span>
+                        <span class="language-tag">Hindi</span>
                     </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-links">
-                        <h5>Categories</h5>
-                        <ul>
-                            <li><a href="blog.html">Thoughts & Writing</a></li>
-                            <li><a href="#portfolio" data-filter=".photography">Photography</a></li>
-                            <li><a href="#portfolio" data-filter=".vlogs">Daily Vlogs</a></li>
-                            <li><a href="#portfolio" data-filter=".politics">Political Views</a></li>
-                            <li><a href="blog.html">Personal Journal</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-links">
-                        <h5>Visit</h5>
-                        <p>riddhi35.github.io</p>
-                        <p>Updated regularly with new content</p>
-                        <p style="font-size: 0.9rem; color: #b0b0b0; margin-top: 10px;">
-                            Latest: <a href="blogs/first-january-2026.html" style="color: #b0b0b0;">First Day of 2026</a>
-                        </p>
+                    <div class="social-links">
+                        <a href="https://github.com/riddhi35" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/riddhi-ghorui" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:way2riddhi@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2024 Riddhi Ghorui. All Rights Reserved. | Designed with Bootstrap</p>
+                <p>&copy; <span id="currentYear"></span> Riddhi Ghorui. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> and <i class="fas fa-code"></i> by a proud Bengali</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script src="js/portfolio.js"></script>
     
+    <!-- Contact Form Handler -->
     <script>
-        // Portfolio Filter
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                const filterValue = this.getAttribute('data-filter');
-                const portfolioItems = document.querySelectorAll('.portfolio-item');
-                
-                portfolioItems.forEach(item => {
-                    if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.padding = '10px 0';
-                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.padding = '20px 0';
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update active nav link
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
-            });
-        });
-        
-        // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            
+            // In a real application, you would send this to a server
+            // For now, show a success message and open email client
+            alert(`Thank you ${name}! I'll get back to you at ${email} soon.`);
+            
+            // Optional: Open email client with pre-filled data
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            const mailtoLink = `mailto:way2riddhi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`)}`;
+            window.location.href = mailtoLink;
+            
+            // Reset form
             this.reset();
         });
+    </script>
+    
+    <script>
+        // Current year for footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Update year in footer
-        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Riddhi Ghorui. All Rights Reserved. | Designed with Bootstrap`;
+        // Mobile navigation toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
         
-        // Filter links in footer
-        document.querySelectorAll('.footer-links a[data-filter]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const filter = this.getAttribute('data-filter');
-                document.querySelector(`.filter-btn[data-filter="${filter}"]`).click();
-                window.scrollTo({
-                    top: document.querySelector('#portfolio').offsetTop - 70,
-                    behavior: 'smooth'
-                });
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+                document.getElementById('navToggle').classList.remove('active');
             });
+        });
+        
+        // Add animation to project cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe project cards and education items
+        document.querySelectorAll('.project-card, .education-item, .certification-item').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
