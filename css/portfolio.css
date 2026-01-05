@@ -949,3 +949,105 @@ footer {
         padding: 20px;
     }
 }
+/* ===== Personal Info in About Section ===== */
+.personal-info {
+    margin: 25px 0;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.personal-info h4 {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.personal-info p {
+    color: var(--gray-color);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.personal-info strong {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+/* ===== Education Achievements ===== */
+.education-achievements {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.education-achievements h4 {
+    font-size: 1rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.education-achievements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.education-achievements li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+.education-achievements li::before {
+    content: '🏐';
+    position: absolute;
+    left: 0;
+}
+
+/* ===== Languages in Footer ===== */
+.languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.language-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Footer Personal Touch ===== */
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-bottom p:last-child {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* ===== Responsive Updates ===== */
+@media (max-width: 768px) {
+    .personal-info {
+        padding: 15px;
+    }
+    
+    .education-achievements li {
+        font-size: 0.85rem;
+    }
+    
+    .languages {
+        justify-content: center;
+    }
+}
