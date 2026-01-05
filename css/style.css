@@ -463,6 +463,40 @@ footer {
     transform: translateY(-2px);
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
+    /* Update existing styles to work with portfolio */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Ensure blog pages still work */
+.blog-container, .blog-content {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Portfolio-specific overrides */
+.portfolio-page .navbar {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Make sure photography page still works */
+.photography-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);
+}
     
     .nav-menu {
         display: none;
